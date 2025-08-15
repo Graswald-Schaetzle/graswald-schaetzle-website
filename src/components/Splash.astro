@@ -9,13 +9,13 @@ const { text = 'splash' } = Astro.props;
 <script>
   import { gsap } from 'gsap';
 
-  import { scrollStop, scrollStart } from '../scripts/scroll';
+  // import { scrollStop, scrollStart } from '../scripts/scroll';
 
   const splash: HTMLElement | null =
     document.querySelector('[data-js="splash"]');
 
   window.addEventListener('load', () => {
-    scrollStop();
+    // scrollStop();
 
     if (!sessionStorage.getItem('intro:done') && splash) {
       splash.style.display = 'block';
@@ -39,7 +39,7 @@ const { text = 'splash' } = Astro.props;
       )
       .call(() => {
         if (!sessionStorage.getItem('intro:done')) {
-          scrollStart();
+          // scrollStart();
           sessionStorage.setItem('intro:done', 'true');
         }
       });
@@ -48,7 +48,7 @@ const { text = 'splash' } = Astro.props;
       tl.progress(1);
       window.dispatchEvent(new Event('intro:done'));
       setTimeout(() => {
-        scrollStart();
+        // scrollStart();
       }, 500);
     }
   });

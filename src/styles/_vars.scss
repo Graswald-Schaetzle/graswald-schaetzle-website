@@ -45,8 +45,11 @@
   --fw-ultrablack: var(--fw-xblack);
 
   // colors
-  --c-light: #ffeedd;
-  --c-dark: #111111;
+  --c-light: #EAE2DA;
+  --c-dark: #171717;
+  --c-primary: #B2C598;
+  --c-primary-dark: #767E6C;
+  --c-beige: #D8CBBE;
 
   // animations
   // in-out
@@ -59,6 +62,5 @@
   --ease-spring: linear(0, .009, .035 2.1%, .141 4.4%, .723 12.9%, .938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, .991, .977 51%, .974 53.8%, .975 57.1%, .997 69.8%, 1.003 76.9%, 1);
 
   // z-index
-  --zi-cursor: 20000;
-  --zi-splash: 80000;
+  // --zi-splash: 80000;
 }

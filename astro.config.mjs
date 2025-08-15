@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 
 import robotsTxt from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
-import glsl from 'vite-plugin-glsl';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,17 +10,17 @@ export default defineConfig({
   site:
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4321'
-      : 'https://astro-creative-base.vercel.app',
+      : 'https://gsw-website.vercel.app',
   integrations: [
     robotsTxt({
       sitemapBaseFileName: 'sitemap-index',
       // TODO: remove when going live
-      // policy: [
-      //   {
-      //     userAgent: '*',
-      //     disallow: '/',
-      //   },
-      // ],
+      policy: [
+        {
+          userAgent: '*',
+          disallow: '/',
+        },
+      ],
     }),
     sitemap({
       lastmod: new Date(),
@@ -37,6 +36,6 @@ export default defineConfig({
         },
       },
     },
-    plugins: [glsl()],
+    plugins: [],
   },
 });

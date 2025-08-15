@@ -99,9 +99,9 @@ body {
 }
 
 // native page-transition as progressive enhancement
-// @view-transition {
-//   navigation: auto;
-// }
+@view-transition {
+  navigation: auto;
+}
 
 // scroll
 html.lenis,
@@ -159,29 +159,4 @@ html.lenis body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-// webgl
-[data-canvas] {
-  > * {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.no-curtains {
-  [data-canvas] {
-    > * {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-
-// tweakpane
-.tp-dfwv {
-  position: fixed !important;
 }

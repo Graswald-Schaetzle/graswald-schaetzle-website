@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type ModuleTitle = Extract<
+  CollectionEntry<'pagesGeneric'>['data']['sections'][0]['modules'][0],
+  { type: 'moduleTitle' }
+>;
+
+interface Props {
+  fields: ModuleTitle;
+}
+
+const { fields } = Astro.props;
+---
+
+<div class="module container" data-module={fields.type}>
+  <h2>{fields.title}</h2>
+</div>

@@ -1,15 +1,19 @@
 ---
 import '../styles/index.scss';
 
+import { general } from '../content/globals';
+
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 // import Splash from '@components/Splash.astro';
 
+const { pageTitle } = Astro.props;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const title = 'gsw website';
-const description = 'new website for graswald & schaetzle';
-const shareImage = new URL('og-image.jpg', Astro.site);
+const title = `${pageTitle ? pageTitle + ' | ' : ''}${general.siteTitle}`;
+const description = general.siteDescription;
+const shareImage = new URL(general.siteImage.src, Astro.url);
 ---
 
 <!doctype html>

@@ -1,0 +1,31 @@
+---
+import { page404 } from '../content/globals';
+
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout pageTitle={page404.title}>
+  <main>
+    <section class="container">
+      <div class="content">
+        <h1 data-inview>{page404.title}</h1>
+        <br />
+        <h2 data-inview>{page404.subline}</h2>
+        <br />
+        <br />
+        <a href="/">{page404.linkText}</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  section {
+    margin-block: to-rem(100);
+  }
+
+  .content {
+    margin-inline: auto;
+    max-width: 60ch;
+  }
+</style>

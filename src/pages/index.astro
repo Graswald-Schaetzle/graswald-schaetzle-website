@@ -1,21 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
+
 import Layout from '@layouts/Layout.astro';
+
+const [page] = await getCollection('pageHome');
 ---
 
 <Layout>
   <main>
     <section class="container">
-      <h1>graswald & schätzle</h1>
+      <h1>{page.data.title}</h1>
     </section>
   </main>
 </Layout>
 
-<style lang="scss">
-  section {
-    margin-block: to-rem(100);
-    display: flex;
-    flex-direction: column;
-    gap: to-rem(50);
-    align-items: flex-start;
-  }
-</style>
+<style lang="scss"></style>

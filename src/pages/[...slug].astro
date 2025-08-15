@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '@layouts/Layout.astro';
+import ModuleTitle from '@components/ModuleTitle.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pagesGeneric');
+  return pages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<Layout pageTitle={page?.data?.title}>
+  <main>
+    {
+      page.data.sections.map((section) => (
+        <section class="section">
+          {section.modules.map((module) => {
+            switch (module.type) {
+              case 'moduleTitle':
+                return <ModuleTitle fields={module} />;
+              default:
+                return null;
+            }
+          })}
+        </section>
+      ))
+    }
+  </main>
+</Layout>

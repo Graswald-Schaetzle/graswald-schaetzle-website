@@ -65,9 +65,6 @@ content:
         label: Title (Meta)
         type: string
         required: false
-      - name: moduleTitle
-        label: Title (Heading 1)
-        component: moduleTitle
 
   - name: generic
     label: Generic Pages

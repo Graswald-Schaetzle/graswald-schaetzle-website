@@ -43,6 +43,10 @@ const pagesGeneric = defineCollection({
               type: z.literal('moduleTitle'),
               title: z.string(),
             }),
+            z.object({
+              type: z.literal('moduleRichText'),
+              content: z.string(),
+            }),
           ]),
         ),
       }),

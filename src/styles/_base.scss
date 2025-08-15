@@ -1,3 +1,4 @@
+@use 'functions' as *;
 @use 'mixins' as *;
 
 // reset
@@ -128,7 +129,15 @@ html.lenis body {
   transition-behavior: allow-discrete;
 }
 
-// grid
+// grid + layout
+.section {
+  margin-block: clamp-fluid(128, 200);
+
+  > .module {
+    margin-block: clamp-fluid(64, 128);
+  }
+}
+
 .container {
   max-width: var(--container-max-width);
   padding-inline: var(--grid-margin);

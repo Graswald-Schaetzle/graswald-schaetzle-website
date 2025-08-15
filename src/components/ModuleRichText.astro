@@ -1,31 +1,36 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-type ModuleTitle = Extract<
+type ModuleRichText = Extract<
   CollectionEntry<'pagesGeneric'>['data']['sections'][0]['modules'][0],
-  { type: 'moduleTitle' }
+  { type: 'moduleRichText' }
 >;
 
 interface Props {
-  fields: ModuleTitle;
+  fields: ModuleRichText;
 }
 
+import { marked } from 'marked';
+
 const { fields } = Astro.props;
+
+const parsedContent = await marked(fields.content);
 ---
 
 <div class="module container" data-module={fields.type}>
   <div class="grid">
-    <h1>{fields.title}</h1>
+    <div class="richtext" set:html={parsedContent} />
   </div>
 </div>
 
 <style lang="scss">
-  h1 {
+  .richtext {
     grid-column: span 12;
+    max-width: 60ch;
   }
 
   @media (min-width: 768px) {
-    h1 {
+    .richtext {
       grid-column: 2 / span 10;
     }
   }

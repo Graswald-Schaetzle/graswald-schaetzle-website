@@ -102,6 +102,9 @@ content:
               - name: moduleTitle
                 label: Title (Heading 1)
                 component: moduleTitle
+              - name: moduleRichText
+                label: Rich-Text
+                component: moduleRichText
 
 
 components:
@@ -111,6 +114,14 @@ components:
       - name: title
         label: Title
         type: string
+        required: true
+        
+  moduleRichText:
+    type: object
+    fields:
+      - name: content
+        label: Content
+        type: rich-text
         required: true
 
   utilImage:

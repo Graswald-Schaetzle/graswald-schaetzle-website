@@ -1,6 +1,6 @@
 ---
 slug: slug
-title: title
+title: Slug
 sections:
   - modules:
       - type: moduleTitle

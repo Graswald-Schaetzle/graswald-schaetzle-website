@@ -27,10 +27,6 @@ const pageHome = defineCollection({
   schema: () =>
     z.object({
       title: z.string().optional(),
-      moduleTitle: z.object({
-        type: z.literal('moduleTitle'),
-        title: z.string(),
-      }),
     }),
 });
 

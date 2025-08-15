@@ -4,5 +4,5 @@ title: Privacy
 sections:
   - modules:
       - type: moduleTitle
-        title: Title
+        title: Privacy
 ---

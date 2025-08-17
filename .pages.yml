@@ -52,7 +52,7 @@ content:
             type: text
             required: true
           - name: links
-            label: Links
+            label: Internal Links
             type: object
             list:
               min: 1
@@ -67,7 +67,7 @@ content:
                 options:
                   collection: generic
                   search: 'slug,title'
-                  value: '{slug: {slug}, title: {title}}'
+                  value: '{slug}'
                   label: '{title} - ${slug} ${title}'
 
       - name: page404

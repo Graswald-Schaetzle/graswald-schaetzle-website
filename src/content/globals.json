@@ -15,7 +15,7 @@
           "link": "legal"
         },
         {
-          "link": "{slug: privacy, title: Privacy}"
+          "link": "privacy"
         }
       ]
     }

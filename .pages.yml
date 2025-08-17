@@ -66,6 +66,7 @@ content:
                 required: true
                 options:
                   collection: generic
+                  search: 'sha'
                   value: '{slug}'
                   label: '{title} (/{slug})'
 

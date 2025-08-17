@@ -68,7 +68,7 @@ content:
                   collection: generic
                   search: 'slug,title'
                   value: '{slug}'
-                  label: '{title} - ${slug} ${title}'
+                  label: 'Page: {title} with Slug: {slug}'
 
       - name: page404
         label: 404 Page

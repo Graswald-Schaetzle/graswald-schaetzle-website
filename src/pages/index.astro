@@ -1,16 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
+// import { getCollection } from 'astro:content';
 
 import Layout from '@layouts/Layout.astro';
+import StickyGrid from '@components/StickyGrid.astro';
+import StickySection from '@components/StickySection.astro';
 
-const [page] = await getCollection('pageHome');
+// const [page] = await getCollection('pageHome');
 ---
 
 <Layout>
   <main>
-    <section class="container">
-      <h1>{page.data.title}</h1>
-    </section>
+    <StickyGrid />
+    <StickySection />
   </main>
 </Layout>
 

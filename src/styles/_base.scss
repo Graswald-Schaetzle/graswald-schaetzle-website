@@ -74,6 +74,11 @@ a {
   background-color: var(--c-dark);
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 html {
   &.no-overscroll {
     &,
@@ -150,10 +155,10 @@ html.lenis body {
 
 // grid + layout
 .section {
-  margin-block: clamp-fluid(128, 200);
+  margin-block: var(--s-sections);
 
   > .module {
-    margin-block: clamp-fluid(64, 128);
+    margin-block: var(--s-modules);
   }
 }
 

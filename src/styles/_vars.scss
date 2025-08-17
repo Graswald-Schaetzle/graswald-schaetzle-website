@@ -2,6 +2,11 @@
 
 :root {
   // spacings
+  --s-sections: #{clamp-fluid(100, 144)};
+  --s-modules: #{clamp-fluid(64, 96)};
+
+  // layout
+  --height-header: #{to-rem(75)};
 
   // grid
   --fluid-min: 375;

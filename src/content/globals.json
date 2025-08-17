@@ -14,7 +14,9 @@
         {
           "link": "src/content/pagesGeneric/legal.md"
         },
-        {}
+        {
+          "link": "{slug: privacy, title: Privacy}"
+        }
       ]
     }
   ],

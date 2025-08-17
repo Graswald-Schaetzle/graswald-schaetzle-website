@@ -53,6 +53,7 @@ content:
             required: true
           - name: links
             label: Links
+            type: object
             list:
               min: 1
               max: 2

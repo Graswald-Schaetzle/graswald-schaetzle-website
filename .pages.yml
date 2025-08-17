@@ -66,6 +66,7 @@ content:
                 options:
                   collection: generic
                   search: 'slug,title'
+                  label: '{title} - ${slug} ${title}'
 
       - name: page404
         label: 404 Page

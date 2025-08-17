@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const globals = defineCollection({
@@ -10,6 +10,17 @@ const globals = defineCollection({
           siteTitle: z.string(),
           siteDescription: z.string(),
           siteImage: image(),
+        }),
+      ),
+      footer: z.array(
+        z.object({
+          title: z.string(),
+          contact: z.string(),
+          links: z.array(
+            z.object({
+              link: reference('pagesGeneric'),
+            }),
+          ),
         }),
       ),
       page404: z.array(

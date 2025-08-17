@@ -1,29 +1,210 @@
+---
+import { getEntries } from 'astro:content';
+
+import { footer } from '@content/globals';
+
+const links = await getEntries(footer.links.map((link) => link.link));
+---
+
 <footer>
   <div class="container">
-    <p>
-      made by
-      <a href="https://jankohlbach.com" target="_blank">
-        https://jankohlbach.com
+    <div class="grid">
+      <nav class="nav">
+        <ol>
+          <li>
+            <a href="/#introduction">/Introduction</a>
+          </li>
+          <li>
+            <a href="/#communication">/Communication</a>
+          </li>
+          <li>
+            <a href="/#technology">/Technology</a>
+          </li>
+          <li>
+            <a href="/#transformation">/Transformation</a>
+          </li>
+        </ol>
+      </nav>
+      <div class="content">
+        <a href="/" class="title link-animated">
+          {footer.title}
+        </a>
+        <div class="meta">
+          <p class="contact">
+            {footer.contact}
+          </p>
+          {
+            links.map((link) => (
+              <span class="link">
+                <a href={link.data.slug} class="link-animated">
+                  {link.data.title}
+                </a>
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <a href="/" class="symbol" aria-label="Home">
+        <svg viewBox="0 0 38 24" fill="none" aria-hidden="true">
+          <path
+            d="M12 24C9.15759 24 6.84241 21.6848 6.84241 18.8424C6.84241 17.914 6.08596 17.1576 5.15759 17.1576C2.31519 17.1576 0 14.8424 0 12C0 9.15759 2.31519 6.84241 5.15759 6.84241C6.08596 6.84241 6.84241 6.08596 6.84241 5.15759C6.84241 2.31519 9.15759 0 12 0C14.8424 0 17.1576 2.31519 17.1576 5.15759C17.1576 8 14.8424 10.3152 12 10.3152C11.0716 10.3152 10.3152 11.0716 10.3152 12C10.3152 12.9284 11.0716 13.6848 12 13.6848C14.8424 13.6848 17.1576 16 17.1576 18.8424C17.1576 21.6848 14.8424 24 12 24Z"
+            fill="currentColor"></path>
+          <path
+            d="M30.8462 18.8424C30.8462 17.914 31.6027 17.1576 32.531 17.1576C35.3734 17.1576 37.6886 14.8424 37.6886 12C37.6886 9.15759 35.3734 6.84241 32.531 6.84241C31.6027 6.84241 30.8462 6.08596 30.8462 5.15759C30.8462 2.31519 28.531 0 25.6886 0C22.8462 0 20.531 2.31519 20.531 5.15759C20.531 8 22.8462 10.3152 25.6886 10.3152C26.617 10.3152 27.3734 11.0716 27.3734 12C27.3734 12.9284 26.617 13.6848 25.6886 13.6848C22.8462 13.6848 20.531 16 20.531 18.8424C20.531 21.6848 22.8462 24 25.6886 24C28.531 24 30.8462 21.6848 30.8462 18.8424Z"
+            fill="currentColor"></path>
+        </svg>
       </a>
-    </p>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/slug">Test</a></li>
-        <li><a href="/legal">Legal</a></li>
-        <li><a href="/privacy">Privacy</a></li>
-      </ul>
-    </nav>
+    </div>
   </div>
 </footer>
 
 <style lang="scss">
   footer {
-    padding-block: to-rem(20);
+    padding-top: to-rem(48);
+    padding-bottom: to-rem(24);
+    color: var(--c-primary);
+    background-color: var(--c-primary-dark);
   }
 
-  .container {
+  .nav {
+    --cols: 5;
+    --col-width: calc(
+      (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
+    );
+
+    grid-column: 8 / span var(--cols);
+    grid-row: 1;
+    margin-bottom: to-rem(160);
+
+    ol {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: to-rem(36);
+      align-items: flex-start;
+      list-style-type: none;
+      font-size: var(--fs-2);
+      counter-reset: list -1;
+
+      li {
+        width: 100%;
+        display: flex;
+        gap: var(--col-width);
+        align-items: baseline;
+        line-height: 1;
+        opacity: 0.5;
+        transition: opacity 0.4s var(--ease-smooth);
+        counter-increment: list;
+
+        &::before {
+          content: counter(list) '.';
+          padding-right: 1em;
+          font-size: to-rem(12);
+          line-height: 1.5;
+          letter-spacing: 0;
+          transform: translateX(calc(var(--grid-gutter) * -1 - 1em));
+        }
+
+        @include has-hover {
+          &:has(a:hover) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    --cols: 4;
+    --col-width: calc(
+      (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
+    );
+
+    grid-column: 9 / span var(--cols);
+    grid-row: 2;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .title {
+      font-size: var(--fs-2);
+      line-height: 1.2;
+    }
+
+    .meta {
+      width: 100%;
+      display: flex;
+      gap: var(--grid-gutter);
+      align-items: flex-end;
+      font-size: to-rem(12);
+      line-height: 1.3;
+
+      .contact {
+        width: calc((var(--col-width) * 2) + var(--grid-gutter));
+        white-space: pre-line;
+      }
+
+      .link {
+        width: var(--col-width);
+      }
+    }
+  }
+
+  .symbol {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+    max-width: to-rem(610);
+
+    svg {
+      overflow: visible;
+    }
+
+    path {
+      animation: symbol1 6s var(--ease-snappy) 0s infinite normal forwards;
+
+      &:nth-child(1) {
+        transform-origin: 25% 50%;
+        animation-name: symbol1;
+      }
+
+      &:nth-child(2) {
+        transform-origin: 75% 50%;
+        animation-name: symbol2;
+      }
+    }
+  }
+
+  @keyframes symbol1 {
+    0% {
+      transform: translateX(0%) rotate(0deg);
+    }
+
+    25%,
+    50% {
+      transform: translateX(50%) rotate(-180deg);
+    }
+
+    75%,
+    100% {
+      transform: translateX(0%) rotate(-360deg);
+    }
+  }
+
+  @keyframes symbol2 {
+    0% {
+      transform: translateX(0%) rotate(0deg);
+    }
+
+    25%,
+    50% {
+      transform: translateX(-50%) rotate(-180deg);
+    }
+
+    75%,
+    100% {
+      transform: translateX(0%) rotate(-360deg);
+    }
   }
 </style>

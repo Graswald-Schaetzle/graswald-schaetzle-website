@@ -65,6 +65,7 @@ content:
                 required: true
                 options:
                   collection: generic
+                  search: 'slug,title'
 
       - name: page404
         label: 404 Page
@@ -147,7 +148,7 @@ components:
         label: Title
         type: string
         required: true
-        
+
   moduleRichText:
     type: object
     fields:

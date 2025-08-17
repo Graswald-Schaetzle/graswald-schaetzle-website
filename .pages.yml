@@ -58,7 +58,7 @@ content:
               min: 1
               max: 2
               collapsible:
-                summary: Links
+                summary: Link
             fields:
               - name: link
                 label: Link

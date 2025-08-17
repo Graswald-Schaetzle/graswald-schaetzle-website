@@ -34,6 +34,42 @@ content:
             type: image
             required: true
 
+      - name: footer
+        label: Footer
+        type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: Footer
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: contact
+            label: Contact
+            type: text
+            required: true
+          - name: links
+            label: Internal Links
+            type: object
+            list:
+              min: 1
+              max: 2
+              collapsible:
+                summary: Link
+            fields:
+              - name: link
+                label: Link
+                type: reference
+                required: true
+                options:
+                  collection: generic
+                  search: 'name,fields.slug,fields.title'
+                  value: '{slug}'
+                  label: '{title} (/{slug})'
+
       - name: page404
         label: 404 Page
         type: object
@@ -115,7 +151,7 @@ components:
         label: Title
         type: string
         required: true
-        
+
   moduleRichText:
     type: object
     fields:

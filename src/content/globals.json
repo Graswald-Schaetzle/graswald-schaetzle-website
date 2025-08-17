@@ -6,6 +6,20 @@
       "siteImage": "../images/duck-rubber-1.jpg"
     }
   ],
+  "footer": [
+    {
+      "title": "Graswald/Schaetzle",
+      "contact": "Graswald & Schaetzle GmbH\nSüdliche Münchner Str. 42A\n82031 Grünwald",
+      "links": [
+        {
+          "link": "legal"
+        },
+        {
+          "link": "privacy"
+        }
+      ]
+    }
+  ],
   "page404": [
     {
       "title": "404",

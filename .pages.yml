@@ -65,7 +65,7 @@ content:
                 required: true
                 options:
                   collection: generic
-                  search: 'name,slug,title'
+                  search: 'slug,title'
 
       - name: page404
         label: 404 Page

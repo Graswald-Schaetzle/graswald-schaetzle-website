@@ -66,7 +66,7 @@ content:
                 required: true
                 options:
                   collection: generic
-                  search: 'fields.slug,fields.title'
+                  search: 'name,fields.slug,fields.title'
                   value: '{slug}'
                   label: '{title} (/{slug})'
 

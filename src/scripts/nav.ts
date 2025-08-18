@@ -12,6 +12,7 @@ const fromBottom = (element: Element, percentage: number) => {
       duration: 1,
     },
   );
+  element.classList.remove('to-top');
   element.classList.add('from-bottom');
 };
 
@@ -27,6 +28,7 @@ const toTop = (element: Element, percentage: number) => {
       duration: 1,
     },
   );
+  element.classList.remove('from-bottom');
   element.classList.add('to-top');
 };
 
@@ -66,6 +68,14 @@ window.addEventListener('load', () => {
               if (link.hash === '#technology') {
                 fromBottom(navWord2, 20);
               }
+              if (
+                link.hash === '#transformation' &&
+                !navWord1.classList.contains('from-bottom') &&
+                !navWord2.classList.contains('from-bottom')
+              ) {
+                fromBottom(navWord1, 19);
+                fromBottom(navWord2, 20);
+              }
             }
           });
         } else {
@@ -84,6 +94,13 @@ window.addEventListener('load', () => {
                 link.hash === '#technology' &&
                 navWord2.classList.contains('from-bottom')
               ) {
+                toTop(navWord2, 20);
+              }
+              if (
+                link.hash === '#transformation' &&
+                entry.boundingClientRect.top > 0
+              ) {
+                toTop(navWord1, 19);
                 toTop(navWord2, 20);
               }
             }

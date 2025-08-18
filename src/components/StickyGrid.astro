@@ -14,10 +14,10 @@
           suscipit iure nam possimus nobis quod eligendi, magni laudantium, cum
           dolores porro similique debitis ab eveniet?
         </p>
-        <nav>
+        <nav class="nav" data-js="io-nav">
           <ol>
             <li>
-              <a href="/#introduction">/Introduction</a>
+              <a href="/#introduction" class="is-active">/Introduction</a>
             </li>
             <li>
               <a href="/#communication">/Communication</a>
@@ -120,6 +120,14 @@
 
   .grid {
     align-items: start;
+  }
+
+  .nav {
+    a {
+      &.is-active {
+        text-decoration: underline;
+      }
+    }
   }
 
   .introduction {

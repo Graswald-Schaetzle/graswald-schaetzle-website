@@ -1,12 +1,10 @@
 <header>
   <div class="container">
     <div class="grid">
-      <h1 class="title">
-        <a href="/" class="title-inner">
-          <span>Graswald</span>
-          <span>/Schaetzle</span>
-        </a>
-      </h1>
+      <a href="/" class="title">
+        <span class="word-1" data-js="nav-word-1">Graswald</span>
+        <span class="word-2" data-js="nav-word-2">/Schaetzle</span>
+      </a>
       <a href="/" class="symbol" aria-label="Home">
         <svg viewBox="0 0 38 24" fill="none" aria-hidden="true">
           <path
@@ -20,40 +18,84 @@
     </div>
   </div>
 </header>
+<div class="scroll-action" inert>
+  <div class="container">
+    <div class="grid">
+      <a href="/" class="title">
+        <span class="word-1">Graswald</span>
+        <span class="word-2">/Schaetzle</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <style lang="scss">
+  header,
+  .scroll-action {
+    padding-top: to-rem(45);
+    height: var(--height-header);
+  }
+
   header {
     position: sticky;
     top: 0;
-    padding-top: to-rem(45);
-    height: var(--height-header);
+  }
+
+  .scroll-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+
+    .title {
+      .word-1 {
+        clip-path: inset(0% 0% 0% 0.75em);
+      }
+
+      .word-2 {
+        clip-path: inset(0% 0% 0% 0.9em);
+      }
+    }
   }
 
   .grid {
     align-items: center;
   }
 
-  .title,
-  .title-inner {
+  .title {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / span 8;
-  }
-
-  h1 {
+    justify-items: start;
     font-size: var(--fs-4);
-    font-weight: var(--fw-regular);
 
-    a {
-      span {
-        &:first-child {
-          grid-column: 1 / span 4;
-        }
+    .word-1 {
+      grid-column: 1 / span 4;
+      clip-path: polygon(
+        0 0,
+        19% 0,
+        19% 100%,
+        100% 100%,
+        100% 100%,
+        19% 100%,
+        19% 100%,
+        0 100%
+      );
+    }
 
-        &:last-child {
-          grid-column: 5 / span 4;
-        }
-      }
+    .word-2 {
+      grid-column: 5 / span 4;
+      clip-path: polygon(
+        0 0,
+        20% 0,
+        20% 100%,
+        100% 100%,
+        100% 100%,
+        20% 100%,
+        20% 100%,
+        0 100%
+      );
     }
   }
 
@@ -76,7 +118,7 @@
   }
 
   @include has-hover {
-    header:has(.title-inner:hover) .symbol,
+    header:has(.title:hover) .symbol,
     .symbol:hover {
       path {
         &:nth-child(1) {

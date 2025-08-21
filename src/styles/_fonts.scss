@@ -1,1 +1,17 @@
-// font-faces here
+@font-face {
+  font-family: 'Sneak';
+  src: url('/fonts/sneak-regular/Sneak-Regular.woff2') format('woff2'),
+       url('/fonts/sneak-regular/Sneak-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sneak Mono';
+  src: url('/fonts/sneak-mono/Sneak-Mono.woff2') format('woff2'),
+       url('/fonts/sneak-mono/Sneak-Mono.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}

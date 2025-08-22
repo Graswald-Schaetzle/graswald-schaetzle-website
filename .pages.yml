@@ -101,6 +101,10 @@ content:
         label: Title (Meta)
         type: string
         required: false
+      - name: h1
+        label: H1 (hidden, but for SEO)
+        type: string
+        required: true
 
   - name: generic
     label: Generic Pages

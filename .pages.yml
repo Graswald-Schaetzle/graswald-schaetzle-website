@@ -105,6 +105,9 @@ content:
         label: H1 (hidden, but for SEO)
         type: string
         required: true
+      - name: componentStickyContent
+        label: Sticky Content
+        component: componentStickyContent
 
   - name: generic
     label: Generic Pages

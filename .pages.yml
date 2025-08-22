@@ -105,9 +105,9 @@ content:
         label: H1 (hidden, but for SEO)
         type: string
         required: true
-      - name: componentStickyContent
+      - name: moduleStickyContent
         label: Sticky Content
-        component: componentStickyContent
+        component: moduleStickyContent
 
   - name: generic
     label: Generic Pages
@@ -167,6 +167,17 @@ components:
         type: rich-text
         required: true
 
+  moduleStickyContent:
+    type: object
+    fields:
+      - name: intro
+        label: Intro
+        type: rich-text
+        required: true
+      - name: introLink
+        label: Link
+        component: utilLink
+
   utilImage:
     type: object
     fields:
@@ -176,5 +187,17 @@ components:
         required: true
       - name: alt
         label: Alt-Text
+        type: string
+        required: true
+
+  utilLink:
+    type: object
+    fields:
+      - name: link
+        label: Link
+        type: string
+        required: true
+      - name: linkText
+        label: Link Text
         type: string
         required: true

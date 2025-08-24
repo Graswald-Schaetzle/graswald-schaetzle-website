@@ -177,6 +177,22 @@ components:
       - name: introLink
         label: Link
         component: utilLink
+      - name: stickyColumn1
+        label: Sticky Column 1
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+      - name: stickyColumn2
+        label: Sticky Column 2
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
 
   utilImage:
     type: object

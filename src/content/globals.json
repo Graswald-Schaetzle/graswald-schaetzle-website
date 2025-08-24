@@ -6,6 +6,28 @@
       "siteImage": "../images/duck-rubber-1.jpg"
     }
   ],
+  "navigation": [
+    {
+      "links": [
+        {
+          "title": "Introduction",
+          "anchor": "introduction"
+        },
+        {
+          "title": "Communication",
+          "anchor": "communication"
+        },
+        {
+          "title": "Technology",
+          "anchor": "technology"
+        },
+        {
+          "title": "Transformation",
+          "anchor": "transformation"
+        }
+      ]
+    }
+  ],
   "footer": [
     {
       "title": "Graswald/Schaetzle",

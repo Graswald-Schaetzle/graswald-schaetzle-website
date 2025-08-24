@@ -196,6 +196,61 @@ components:
         label: Title
         type: string
         required: true
+      - name: sections
+        label: Sticky Column Sections
+        type: block
+        blockKey: type
+        list:
+          min: 1
+          collapsible:
+            summary: 'Module {index}'
+        blocks:
+          - name: componentStickyColumnContent
+            label: Content
+            component: componentStickyColumnContent
+          - name: componentStickyColumnImage
+            label: Image
+            component: componentStickyColumnImage
+          - name: componentStickyColumnList
+            label: List
+            component: componentStickyColumnList
+
+  componentStickyColumnContent:
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: content
+        label: Content
+        type: rich-text
+        required: true
+
+  componentStickyColumnImage:
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: image
+        label: Image
+        component: utilImage
+
+  componentStickyColumnList:
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: text
+        label: Text
+        type: text
+        list:
+          min: 1
+          collapsible: true
 
   utilImage:
     type: object

@@ -17,7 +17,9 @@ moduleStickyContent:
     link: "#"
     linkText: Reach out now
   stickyColumn1:
+    anchor: communication
     title: Communication
   stickyColumn2:
+    anchor: technology
     title: Technology
 ---

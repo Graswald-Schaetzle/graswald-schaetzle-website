@@ -35,7 +35,7 @@ const globals = defineCollection({
 
 const pageHome = defineCollection({
   loader: glob({ base: './src/content', pattern: 'pageHome.md' }),
-  schema: () =>
+  schema: ({ image }) =>
     z.object({
       title: z.string().optional(),
       h1: z.string(),
@@ -44,6 +44,32 @@ const pageHome = defineCollection({
         introLink: z.object({
           link: z.string(),
           linkText: z.string(),
+        }),
+        stickyColumn1: z.object({
+          anchor: z.string(),
+          title: z.string(),
+          sections: z.array(
+            z.discriminatedUnion('type', [
+              z.object({
+                type: z.literal('componentStickyColumnContent'),
+                title: z.string(),
+                content: z.string(),
+              }),
+              z.object({
+                type: z.literal('componentStickyColumnImage'),
+                title: z.string(),
+                image: z.object({
+                  image: image(),
+                  alt: z.string(),
+                }),
+              }),
+              z.object({
+                type: z.literal('componentStickyColumnList'),
+                title: z.string(),
+                text: z.array(z.string()),
+              }),
+            ]),
+          ),
         }),
       }),
     }),

@@ -38,6 +38,14 @@ const pageHome = defineCollection({
   schema: () =>
     z.object({
       title: z.string().optional(),
+      h1: z.string(),
+      moduleStickyContent: z.object({
+        intro: z.string(),
+        introLink: z.object({
+          link: z.string(),
+          linkText: z.string(),
+        }),
+      }),
     }),
 });
 

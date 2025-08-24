@@ -1,0 +1,72 @@
+---
+const { fields } = Astro.props;
+---
+
+<a href={fields.link} target="_blank" class="link-with-arrow h4">
+  <span class="text">{fields.linkText}</span>
+  <span class="icon-wrap">
+    <span class="icons">
+      <svg
+        class="icon icon-first"
+        viewBox="0 0 12 10"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M7.26223 0.171997L11.8342 4.852L7.26223 9.532L6.54223 8.812L9.98023 5.32H0.584229V4.384H9.98023L6.54223 0.891996L7.26223 0.171997Z"
+          fill="currentColor"></path>
+      </svg>
+      <svg
+        class="icon icon-second"
+        viewBox="0 0 12 10"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M7.26223 0.171997L11.8342 4.852L7.26223 9.532L6.54223 8.812L9.98023 5.32H0.584229V4.384H9.98023L6.54223 0.891996L7.26223 0.171997Z"
+          fill="currentColor"></path>
+      </svg>
+    </span>
+  </span>
+</a>
+
+<style lang="scss">
+  .link-with-arrow {
+    display: flex;
+    padding-bottom: to-rem(8);
+    border-bottom: 1px solid var(--c-dark-50);
+
+    &:hover {
+      .icons {
+        translate: 250% 0;
+      }
+    }
+
+    .text {
+      width: calc(50% + (var(--grid-gutter) / 2));
+    }
+
+    .icon-wrap {
+      padding: to-rem(8) to-rem(12);
+      background-color: var(--c-primary);
+      border-radius: to-rem(24);
+      overflow: clip;
+    }
+
+    .icons {
+      display: grid;
+      transition: translate 0.4s var(--ease-smooth);
+    }
+
+    .icon {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+      width: to-rem(12);
+      aspect-ratio: 12 / 10;
+    }
+
+    .icon-second {
+      translate: -250% 0;
+    }
+  }
+</style>

@@ -1,23 +1,19 @@
 ---
-// import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 import Layout from '@layouts/Layout.astro';
-// import StickyGrid from '@components/StickyGrid.astro';
-// import StickySection from '@components/StickySection.astro';
 import StickyContent from '@components/StickyContent.astro';
 
-// const [page] = await getCollection('pageHome');
+const [page] = await getCollection('pageHome');
 ---
 
 <Layout>
   <main>
     <section class="visually-hidden">
-      <h1>TODO: set h1 for seo from cms</h1>
+      <h1>{page.data.h1}</h1>
     </section>
-    <StickyContent />
-    <!-- <StickyGrid />
-    <StickySection /> -->
+    <section>
+      <StickyContent fields={page.data.moduleStickyContent} />
+    </section>
   </main>
 </Layout>
-
-<style lang="scss"></style>

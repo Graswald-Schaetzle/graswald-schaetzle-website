@@ -1,35 +1,81 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import LinkWithArrow from '@components/LinkWithArrow.astro';
+
+type ModuleStickyContent =
+  CollectionEntry<'pageHome'>['data']['moduleStickyContent'];
+
+interface Props {
+  fields: ModuleStickyContent;
+}
+
+import { marked } from 'marked';
+
+const { fields } = Astro.props;
+
+const parsedIntro = await marked(fields.intro);
+---
+
+<script>
+  const scrollDownButton = document.querySelector('[data-js="scroll-down"]');
+
+  scrollDownButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  });
+</script>
+
 <div class="container">
   <div class="grid">
-    <nav class="navigation" data-js="io-nav">
+    <button class="scroll-down" data-js="scroll-down" aria-label="scroll down">
+      <span class="icons">
+        <svg
+          class="icon icon-first"
+          viewBox="0 0 10 12"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M9.82802 7.26223L5.14802 11.8342L0.468018 7.26223L1.18802 6.54223L4.68002 9.98023L4.68002 0.584229L5.61602 0.584229L5.61602 9.98023L9.10802 6.54223L9.82802 7.26223Z"
+            fill="currentColor"></path>
+        </svg>
+        <svg
+          class="icon icon-second"
+          viewBox="0 0 10 12"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M9.82802 7.26223L5.14802 11.8342L0.468018 7.26223L1.18802 6.54223L4.68002 9.98023L4.68002 0.584229L5.61602 0.584229L5.61602 9.98023L9.10802 6.54223L9.82802 7.26223Z"
+            fill="currentColor"></path>
+        </svg>
+      </span>
+    </button>
+    <nav class="navigation" data-js="nav">
       <ol>
         <li>
-          <a href="/#introduction" class="is-active">/Introduction</a>
+          <a href="/#introduction" class="h3 is-active">Introduction</a>
         </li>
         <li>
-          <a href="/#communication">/Communication</a>
+          <a href="/#communication" class="h3">Communication</a>
         </li>
         <li>
-          <a href="/#technology">/Technology</a>
+          <a href="/#technology" class="h3">Technology</a>
         </li>
         <li>
-          <a href="/#transformation">/Transformation</a>
+          <a href="/#transformation" class="h3">Transformation</a>
         </li>
       </ol>
     </nav>
     <div class="nested-grid">
-      <div class="introduction">
-        <h2>introduction</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          natus ut assumenda tempora, sed optio et, labore, magnam dignissimos
-          mollitia impedit maxime itaque aspernatur. Doloremque fuga nam labore,
-          incidunt architecto odit porro dolores vel natus placeat, quibusdam
-          quas eos iusto accusamus odio at recusandae mollitia temporibus ullam
-          voluptas atque cupiditate! Quisquam, distinctio repellendus assumenda
-          sequi cupiditate architecto omnis iste consectetur beatae dolor
-          suscipit iure nam possimus nobis quod eligendi, magni laudantium, cum
-          dolores porro similique debitis ab eveniet?
-        </p>
+      <div class="intro">
+        <div class="richtext" set:html={parsedIntro} />
+        <div class="intro-link">
+          <LinkWithArrow fields={fields.introLink} />
+        </div>
       </div>
       <div id="communication" class="col-1">
         <h2>communication</h2>
@@ -176,8 +222,111 @@
 </div>
 
 <style lang="scss">
-  [id] {
-    scroll-margin-top: calc(var(--height-header) + var(--s-sections));
+  // [id] {
+  //   scroll-margin-top: calc(var(--height-header) + var(--s-sections));
+  // }
+
+  .grid {
+    position: relative;
+  }
+
+  .scroll-down {
+    position: absolute;
+    top: calc(100vh - var(--height-header));
+    left: 0;
+    translate: calc(-100% + to-rem(8)) calc(-100% - to-rem(36));
+    padding: to-rem(12) to-rem(8);
+    background-color: var(--c-primary);
+    border-radius: to-rem(24);
+    overflow: clip;
+
+    &:hover {
+      .icons {
+        translate: 0 250%;
+      }
+    }
+
+    .icons {
+      display: grid;
+      transition: translate 0.4s var(--ease-smooth);
+    }
+
+    .icon {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+      width: to-rem(12);
+      aspect-ratio: 12 / 10;
+    }
+
+    .icon-second {
+      translate: 0 -250%;
+    }
+  }
+
+  .navigation {
+    grid-column: 9 / span 4;
+    grid-row: 3;
+    position: sticky;
+    bottom: 0;
+    padding-bottom: to-rem(36);
+
+    ol {
+      display: flex;
+      flex-direction: column;
+      gap: to-rem(12);
+      list-style-type: none;
+      counter-reset: list -1;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      opacity: 0.5;
+      transition: opacity 0.4s var(--ease-smooth);
+      counter-increment: list;
+
+      &:has(a.is-active, a:hover) {
+        opacity: 1;
+      }
+
+      &:has(a.is-active) {
+        &::before {
+          background-color: var(--c-primary);
+        }
+      }
+
+      &::before {
+        content: counter(list) '.';
+        display: block;
+        padding: to-rem(5) to-rem(10);
+        font-family: var(--ff-secondary);
+        font-size: to-rem(12);
+        line-height: 1.5;
+        letter-spacing: 0;
+        border-radius: to-rem(24);
+        translate: to-rem(-10) 0;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: calc(50% - (var(--grid-gutter) / 2));
+
+        &::before {
+          content: '';
+          width: to-rem(7);
+          margin-left: to-rem(-7);
+          aspect-ratio: 11 / 32;
+          background-image: inline-svg(
+            "<svg viewBox='0 0 11 32' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.0001 0.52002L2.29006 31.48H0.810059L9.52006 0.52002H11.0001Z' fill='#171717'/></svg>"
+          );
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
   }
 
   .nested-grid {
@@ -185,23 +334,26 @@
     grid-row: 1;
     display: grid;
     grid-template-columns: subgrid;
+    grid-template-rows: calc(100vh - var(--height-header));
+    grid-auto-rows: auto;
+    align-items: start;
+    padding-bottom: calc(to-rem(120) + to-rem(40));
   }
 
-  .nav {
-    a {
-      &.is-active {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .introduction {
+  .intro {
     grid-column: 9 / span 4;
     grid-row: 1;
     position: sticky;
-    top: 0;
-    // top: calc(var(--height-header) + var(--s-sections));
-    padding-top: calc(var(--height-header) + var(--s-sections));
+    top: var(--height-header);
+    padding-top: calc(to-rem(144));
+
+    .intro-link {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      margin-top: to-rem(120);
+    }
   }
 
   .col-1 {
@@ -224,13 +376,6 @@
   .sidebar {
     grid-column: 9 / span 4;
     grid-row: 2;
-  }
-
-  .navigation {
-    grid-column: 9 / span 4;
-    grid-row: 3;
-    position: sticky;
-    bottom: 0;
   }
 
   .bg {

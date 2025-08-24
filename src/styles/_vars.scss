@@ -12,8 +12,8 @@
   --fluid-min: 375;
   --fluid-max: 1720;
   --container-max-width: #{to-rem(1920)};
-  --grid-margin: #{to-rem(20)};
-  --grid-gutter: #{clamp-fluid(10, 20)};
+  --grid-margin: #{clamp-fluid(16, 48)};
+  --grid-gutter: #{clamp-fluid(12, 24)};
   --grid-max-width: calc(var(--container-max-width) - var(--grid-margin) * 2);
   --grid-columns: 12;
 
@@ -25,10 +25,10 @@
   --fs-base: #{clamp-fluid(16, 18)};
   --fs-1: #{clamp-fluid(34, 44)};
   --fs-2: #{clamp-fluid(26, 36)};
-  --fs-3: #{clamp-fluid(24, 28)};
-  --fs-4: #{clamp-fluid(22, 24)};
-  --fs-5: #{clamp-fluid(20, 22)};
-  --fs-6: #{clamp-fluid(20, 22)};
+  --fs-3: #{clamp-fluid(22, 24)};
+  --fs-4: #{clamp-fluid(16, 18)};
+  --fs-5: #{clamp-fluid(12, 12)};
+  --fs-6: #{clamp-fluid(12, 12)};
 
   // font-weights
   --fw-thin: 100;
@@ -52,6 +52,7 @@
   // colors
   --c-light: #EAE2DA;
   --c-dark: #171717;
+  --c-dark-50: #17171780;
   --c-primary: #B2C598;
   --c-primary-dark: #767E6C;
   --c-beige: #D8CBBE;

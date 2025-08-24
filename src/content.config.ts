@@ -12,6 +12,16 @@ const globals = defineCollection({
           siteImage: image(),
         }),
       ),
+      navigation: z.array(
+        z.object({
+          links: z.array(
+            z.object({
+              title: z.string(),
+              anchor: z.string(),
+            }),
+          ),
+        }),
+      ),
       footer: z.array(
         z.object({
           title: z.string(),

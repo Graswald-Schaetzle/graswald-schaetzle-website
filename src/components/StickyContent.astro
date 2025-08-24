@@ -1,8 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-import LinkWithArrow from '@components/LinkWithArrow.astro';
-
 type ModuleStickyContent =
   CollectionEntry<'pageHome'>['data']['moduleStickyContent'];
 
@@ -11,6 +9,10 @@ interface Props {
 }
 
 import { marked } from 'marked';
+
+import { navigation } from '@content/globals';
+
+import LinkWithArrow from '@components/LinkWithArrow.astro';
 
 const { fields } = Astro.props;
 
@@ -56,18 +58,18 @@ const parsedIntro = await marked(fields.intro);
     </button>
     <nav class="navigation" data-js="nav">
       <ol>
-        <li>
-          <a href="/#introduction" class="h3 is-active">Introduction</a>
-        </li>
-        <li>
-          <a href="/#communication" class="h3">Communication</a>
-        </li>
-        <li>
-          <a href="/#technology" class="h3">Technology</a>
-        </li>
-        <li>
-          <a href="/#transformation" class="h3">Transformation</a>
-        </li>
+        {
+          navigation.links.map((link, i) => (
+            <li>
+              <a
+                href={`/#${link.anchor}`}
+                class={`h3 ${i === 0 ? 'is-active' : ''}`}
+              >
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
       </ol>
     </nav>
     <div class="nested-grid">

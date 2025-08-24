@@ -1,7 +1,7 @@
 ---
 import { getEntries } from 'astro:content';
 
-import { footer } from '@content/globals';
+import { navigation, footer } from '@content/globals';
 
 const links = await getEntries(footer.links.map((link) => link.link));
 ---
@@ -11,18 +11,13 @@ const links = await getEntries(footer.links.map((link) => link.link));
     <div class="grid">
       <nav class="nav">
         <ol>
-          <li>
-            <a href="/#introduction">/Introduction</a>
-          </li>
-          <li>
-            <a href="/#communication">/Communication</a>
-          </li>
-          <li>
-            <a href="/#technology">/Technology</a>
-          </li>
-          <li>
-            <a href="/#transformation">/Transformation</a>
-          </li>
+          {
+            navigation.links.map((link) => (
+              <li>
+                <a href={`/#${link.anchor}`}>{link.title}</a>
+              </li>
+            ))
+          }
         </ol>
       </nav>
       <div class="content">

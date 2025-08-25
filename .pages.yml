@@ -132,18 +132,13 @@ content:
       - name: moduleStickyContent
         label: Sticky Content
         component: moduleStickyContent
-      - name: modules
-        label: Modules
-        type: block
-        blockKey: type
+      - name: moduleTextLinksBlocks
+        label: Text & Links Blocks
+        component: moduleTextLinksBlocks
         list:
           min: 1
           collapsible:
-            summary: 'Module {index}'
-        blocks:
-          - name: moduleTextLinkBlock
-            label: Text & Links Block
-            component: moduleTextLinkBlock
+            summary: Text & Links Block
 
   - name: generic
     label: Generic Pages
@@ -203,7 +198,7 @@ components:
         type: rich-text
         required: true
 
-  moduleTextLinkBlock:
+  moduleTextLinksBlocks:
     type: object
     fields:
       - name: title

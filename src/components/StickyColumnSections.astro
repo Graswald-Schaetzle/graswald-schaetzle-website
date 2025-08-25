@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type StickyColumnSection = Extract<
+  CollectionEntry<'pageHome'>['data']['moduleStickyContent']['stickyColumn1']['sections'][0],
+  {
+    type:
+      | 'componentStickyColumnContent'
+      | 'componentStickyColumnImage'
+      | 'componentStickyColumnList';
+  }
+>;
+
+interface Props {
+  fields: StickyColumnSection;
+}
+
+import { marked } from 'marked';
+
+import { Image } from 'astro:assets';
+
+const { fields } = Astro.props;
+---
+
+{
+  fields.type === 'componentStickyColumnContent' && (
+    <Fragment>
+      <h3 class="title h5">{fields.title}</h3>
+      <div class="content richtext" set:html={await marked(fields.content)} />
+    </Fragment>
+  )
+}
+{
+  fields.type === 'componentStickyColumnImage' && (
+    <Fragment>
+      <h3 class="title h5">{fields.title}</h3>
+      <Image src={fields.image.image} alt={fields.image.alt} class="image" />
+    </Fragment>
+  )
+}
+{
+  fields.type === 'componentStickyColumnList' && (
+    <Fragment>
+      <h3 class="title h5">{fields.title}</h3>
+      <ol class="list">
+        {fields.text.map((item) => (
+          <li class="h3">{item}</li>
+        ))}
+      </ol>
+    </Fragment>
+  )
+}
+
+<style lang="scss">
+  .title {
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    translate: -100% 0;
+    writing-mode: sideways-lr;
+  }
+
+  .image {
+    aspect-ratio: 318 / 398;
+    object-fit: cover;
+    border-radius: to-rem(24);
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(36);
+    list-style: upper-alpha;
+    translate: calc(var(--grid-gutter) * -1) 0;
+
+    li {
+      padding-left: var(--grid-gutter);
+
+      &::marker {
+        font-family: var(--ff-secondary);
+        font-size: var(--fs-5);
+      }
+    }
+  }
+</style>

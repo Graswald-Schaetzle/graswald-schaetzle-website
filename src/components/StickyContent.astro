@@ -13,6 +13,7 @@ import { marked } from 'marked';
 import { navigation } from '@content/globals';
 
 import LinkWithArrow from '@components/LinkWithArrow.astro';
+import StickyColumnSections from '@components/StickyColumnSections.astro';
 
 const { fields } = Astro.props;
 
@@ -30,7 +31,7 @@ const parsedIntro = await marked(fields.intro);
   });
 </script>
 
-<div class="container">
+<div id={fields.anchor} class="container">
   <div class="grid">
     <button class="scroll-down" data-js="scroll-down" aria-label="scroll down">
       <span class="icons">
@@ -79,83 +80,37 @@ const parsedIntro = await marked(fields.intro);
           <LinkWithArrow fields={fields.introLink} />
         </div>
       </div>
-      <div id="communication" class="col-1">
-        <h2>communication</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          natus ut assumenda tempora, sed optio et, labore, magnam dignissimos
-          mollitia impedit maxime itaque aspernatur. Doloremque fuga nam labore,
-          incidunt architecto odit porro dolores vel natus placeat, quibusdam
-          quas eos iusto accusamus odio at recusandae mollitia temporibus ullam
-          voluptas atque cupiditate! Quisquam, distinctio repellendus assumenda
-          sequi cupiditate architecto omnis iste consectetur beatae dolor
-          suscipit iure nam possimus nobis quod eligendi, magni laudantium, cum
-          dolores porro similique debitis ab eveniet? Atque sunt id error et
-          inventore nulla, porro velit quas non omnis possimus laboriosam, fuga
-          eveniet delectus! Nemo exercitationem atque inventore quis!
-          Voluptatibus voluptatum sit consequatur saepe, quisquam maiores a amet
-          optio, veritatis tenetur voluptates, accusamus suscipit quod! Ab
-          obcaecati deserunt, itaque aspernatur voluptatem accusamus libero et
-          natus rerum sed eveniet aliquid sunt perspiciatis! Numquam, enim
-          deserunt doloribus eaque, itaque delectus in harum cupiditate porro
-          animi ea, quaerat ipsa suscipit sed architecto sint! Harum ullam ut,
-          tenetur atque dolorem eum dolore rem pariatur aperiam voluptates
-          praesentium nostrum, repellendus temporibus a nihil est quia, maiores
-          nam iure aliquid sit deserunt id. Fuga fugiat omnis autem, deleniti
-          tenetur itaque. Recusandae suscipit maxime magnam sed quaerat
-          accusantium. Inventore placeat fugiat, distinctio id ipsam neque
-          deserunt? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reiciendis natus ut assumenda tempora, sed optio et, labore, magnam
-          dignissimos mollitia impedit maxime itaque aspernatur. Doloremque fuga
-          nam labore, incidunt architecto odit porro dolores vel natus placeat,
-          quibusdam quas eos iusto accusamus odio at recusandae mollitia
-          temporibus ullam voluptas atque cupiditate! Quisquam, distinctio
-          repellendus assumenda sequi cupiditate architecto omnis iste
-          consectetur beatae dolor suscipit iure nam possimus nobis quod
-          eligendi, magni laudantium, cum dolores porro similique debitis ab
-          eveniet? Atque sunt id error et inventore nulla, porro velit quas non
-          omnis possimus laboriosam, fuga eveniet delectus! Nemo exercitationem
-          atque inventore quis! Voluptatibus voluptatum sit consequatur saepe,
-          quisquam maiores a amet optio, veritatis tenetur voluptates, accusamus
-          suscipit quod! Ab obcaecati deserunt, itaque aspernatur voluptatem
-          accusamus libero et natus rerum sed eveniet aliquid sunt perspiciatis!
-          Numquam, enim deserunt doloribus eaque, itaque delectus in harum
-          cupiditate porro animi ea, quaerat ipsa suscipit sed architecto sint!
-          Harum ullam ut, tenetur atque dolorem eum dolore rem pariatur aperiam
-          voluptates praesentium nostrum, repellendus temporibus a nihil est
-          quia, maiores nam iure aliquid sit deserunt id. Fuga fugiat omnis
-          autem, deleniti tenetur itaque. Recusandae suscipit maxime magnam sed
-          quaerat accusantium. Inventore placeat fugiat, distinctio id ipsam
-          neque deserunt?
-        </p>
+      <div
+        id={fields.stickyColumn1.anchor}
+        class="sticky-column sticky-column-1"
+      >
+        <div class="title-wrap">
+          <span class="index">1.</span>
+          <h2 class="title h1">{fields.stickyColumn1.title}</h2>
+        </div>
+        {
+          fields.stickyColumn1.sections.map(async (section) => (
+            <div class="sticky-column-section">
+              <StickyColumnSections fields={section} />
+            </div>
+          ))
+        }
       </div>
-      <div id="technology" class="col-2">
-        <h2>technology</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          natus ut assumenda tempora, sed optio et, labore, magnam dignissimos
-          mollitia impedit maxime itaque aspernatur. Doloremque fuga nam labore,
-          incidunt architecto odit porro dolores vel natus placeat, quibusdam
-          quas eos iusto accusamus odio at recusandae mollitia temporibus ullam
-          voluptas atque cupiditate! Quisquam, distinctio repellendus assumenda
-          sequi cupiditate architecto omnis iste consectetur beatae dolor
-          suscipit iure nam possimus nobis quod eligendi, magni laudantium, cum
-          dolores porro similique debitis ab eveniet? Atque sunt id error et
-          inventore nulla, porro velit quas non omnis possimus laboriosam, fuga
-          eveniet delectus! Nemo exercitationem atque inventore quis!
-          Voluptatibus voluptatum sit consequatur saepe, quisquam maiores a amet
-          optio, veritatis tenetur voluptates, accusamus suscipit quod! Ab
-          obcaecati deserunt, itaque aspernatur voluptatem accusamus libero et
-          natus rerum sed eveniet aliquid sunt perspiciatis! Numquam, enim
-          deserunt doloribus eaque, itaque delectus in harum cupiditate porro
-          animi ea, quaerat ipsa suscipit sed architecto sint! Harum ullam ut,
-          tenetur atque dolorem eum dolore rem pariatur aperiam voluptates
-          praesentium nostrum, repellendus temporibus a nihil est quia, maiores
-          nam iure aliquid sit deserunt id. Fuga fugiat omnis autem, deleniti
-          tenetur itaque. Recusandae suscipit maxime magnam sed quaerat
-          accusantium. Inventore placeat fugiat, distinctio id ipsam neque
-          deserunt?
-        </p>
+      <div
+        id={fields.stickyColumn2.anchor}
+        class="sticky-column sticky-column-2"
+      >
+        <div class="title-wrap">
+          <span class="index">2.</span>
+          <h2 class="title h1">{fields.stickyColumn2.title}</h2>
+        </div>
+        {
+          fields.stickyColumn2.sections.map((section) => (
+            <div class="sticky-column-section">
+              <StickyColumnSections fields={section} />
+            </div>
+          ))
+        }
       </div>
     </div>
     <p class="content">
@@ -224,10 +179,6 @@ const parsedIntro = await marked(fields.intro);
 </div>
 
 <style lang="scss">
-  // [id] {
-  //   scroll-margin-top: calc(var(--height-header) + var(--s-sections));
-  // }
-
   .grid {
     position: relative;
   }
@@ -358,12 +309,69 @@ const parsedIntro = await marked(fields.intro);
     }
   }
 
-  .col-1 {
-    grid-column: 1 / span 4;
-    grid-row: 2;
+  .sticky-column {
+    --cols: 4;
+    --col-width: calc(
+      (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
+    );
+
+    position: relative;
+    scroll-margin-top: to-rem(208);
+
+    > * {
+      padding-left: calc(var(--col-width) + var(--grid-gutter));
+    }
+
+    &-section {
+      position: relative;
+      margin-top: to-rem(120);
+    }
+
+    .title-wrap {
+      position: relative;
+
+      .index {
+        position: absolute;
+        top: to-rem(12);
+        left: 0;
+        display: inline-block;
+        padding: to-rem(5) to-rem(10);
+        font-family: var(--ff-secondary);
+        font-size: to-rem(12);
+        line-height: 1.5;
+        letter-spacing: 0;
+        background-color: var(--c-primary);
+        border-radius: to-rem(24);
+        translate: to-rem(-10) 0;
+      }
+
+      .title {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: '';
+          width: 0.25em;
+          margin-left: -0.25em;
+          aspect-ratio: 11 / 32;
+          background-image: inline-svg(
+            "<svg viewBox='0 0 11 32' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.0001 0.52002L2.29006 31.48H0.810059L9.52006 0.52002H11.0001Z' fill='#171717'/></svg>"
+          );
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
   }
 
-  .col-2 {
+  .sticky-column-1 {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    margin-top: to-rem(208);
+  }
+
+  .sticky-column-2 {
     grid-column: 5 / span 4;
     grid-row: 3;
   }

@@ -177,11 +177,18 @@ moduleTextLinksBlock:
       conversation. If our perspective aligns with your need, let’s talk.
       Whether you’re navigating complexity, building clarity or driving change –
       we’re here to move with you.
+    link:
+      link: "#"
+      linkText: Book a call
   - title: Insight
     content: >-
       If you're exploring new ways to think, lead, and communicate in an AI age
-      – this is for you.  
-        
+      – this is for you.
+
+
       Subscribe to our newsletter Deep Intelligence now. Thoughtfully curated.
       No noise. Just depth.
+    link:
+      link: "#"
+      linkText: Join the list
 ---

@@ -132,13 +132,18 @@ content:
       - name: moduleStickyContent
         label: Sticky Content
         component: moduleStickyContent
-      - name: moduleTextLinkBlock
-        label: Text & Links Block
-        component: moduleTextLinkBlock
+      - name: modules
+        label: Modules
+        type: block
+        blockKey: type
         list:
           min: 1
           collapsible:
-            summary: Text & Links Block
+            summary: 'Module {index}'
+        blocks:
+          - name: moduleTextLinkBlock
+            label: Text & Links Block
+            component: moduleTextLinkBlock
 
   - name: generic
     label: Generic Pages

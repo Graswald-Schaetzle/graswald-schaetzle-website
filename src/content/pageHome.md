@@ -180,6 +180,17 @@ moduleTextLinksBlock:
     link:
       link: "#"
       linkText: Book a call
+    contacts:
+      - title: Naïs Graswald
+        mail: nais@graswald-schaetzle.com
+        link:
+          link: "#"
+          linkText: LinkedIn
+      - title: Florian Schätzle
+        mail: florian@graswald-schaetzle.com
+        link:
+          link: "#"
+          linkText: LinkedIn
   - title: Insight
     content: >-
       If you're exploring new ways to think, lead, and communicate in an AI age

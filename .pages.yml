@@ -212,6 +212,25 @@ components:
       - name: stickyColumn2
         label: Sticky Column 2
         component: componentStickyColumn
+      - name: stickySection
+        label: Sticky Section
+        type: object
+        fields:
+          - name: anchor
+            label: Anchor
+            description: lowercase, hyphenated, e.g. this-section
+            type: string
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: content
+            label: Content
+            component: componentStickyColumnContent
+          - name: column
+            label: Column
+            component: componentStickyColumn
 
   componentStickyColumn:
     type: object

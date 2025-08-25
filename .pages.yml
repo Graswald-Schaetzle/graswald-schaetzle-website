@@ -191,6 +191,18 @@ components:
         type: rich-text
         required: true
 
+  moduleTextLinkBlock:
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: content
+        label: Content
+        type: rich-text
+        required: true
+
   moduleStickyContent:
     type: object
     fields:

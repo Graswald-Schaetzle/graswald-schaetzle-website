@@ -1,3 +1,5 @@
+import type { ImageFunction } from 'astro:content';
+
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
@@ -42,6 +44,34 @@ const globals = defineCollection({
     }),
 });
 
+const getStickyColumnSchema = (image: ImageFunction) =>
+  z.object({
+    anchor: z.string(),
+    title: z.string(),
+    sections: z.array(
+      z.discriminatedUnion('type', [
+        z.object({
+          type: z.literal('componentStickyColumnContent'),
+          title: z.string(),
+          content: z.string(),
+        }),
+        z.object({
+          type: z.literal('componentStickyColumnImage'),
+          title: z.string(),
+          image: z.object({
+            image: image(),
+            alt: z.string(),
+          }),
+        }),
+        z.object({
+          type: z.literal('componentStickyColumnList'),
+          title: z.string(),
+          text: z.array(z.string()),
+        }),
+      ]),
+    ),
+  });
+
 const pageHome = defineCollection({
   loader: glob({ base: './src/content', pattern: 'pageHome.md' }),
   schema: ({ image }) =>
@@ -49,38 +79,46 @@ const pageHome = defineCollection({
       title: z.string().optional(),
       h1: z.string(),
       moduleStickyContent: z.object({
+        anchor: z.string(),
         intro: z.string(),
         introLink: z.object({
           link: z.string(),
           linkText: z.string(),
         }),
-        stickyColumn1: z.object({
-          anchor: z.string(),
-          title: z.string(),
-          sections: z.array(
-            z.discriminatedUnion('type', [
-              z.object({
-                type: z.literal('componentStickyColumnContent'),
-                title: z.string(),
-                content: z.string(),
-              }),
-              z.object({
-                type: z.literal('componentStickyColumnImage'),
-                title: z.string(),
-                image: z.object({
-                  image: image(),
-                  alt: z.string(),
-                }),
-              }),
-              z.object({
-                type: z.literal('componentStickyColumnList'),
-                title: z.string(),
-                text: z.array(z.string()),
-              }),
-            ]),
-          ),
+        stickyColumn1: getStickyColumnSchema(image),
+        stickyColumn2: getStickyColumnSchema(image),
+        stickySection: z.object({
+          content: z.object({
+            title: z.string(),
+            content: z.string(),
+          }),
+          column: getStickyColumnSchema(image),
         }),
       }),
+      moduleTextLinksBlock: z.array(
+        z.object({
+          title: z.string(),
+          content: z.string(),
+          link: z.object({
+            link: z.string(),
+            linkText: z.string(),
+          }),
+          contacts: z
+            .array(
+              z.object({
+                title: z.string(),
+                mail: z.string().optional(),
+                link: z.object({
+                  link: z.string(),
+                  linkText: z.string(),
+                }),
+              }),
+            )
+            .min(0)
+            .max(2)
+            .optional(),
+        }),
+      ),
     }),
 });
 

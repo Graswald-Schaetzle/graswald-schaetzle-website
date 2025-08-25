@@ -209,6 +209,17 @@ components:
         label: Content
         type: rich-text
         required: true
+      - name: link
+        label: Link
+        component: utilLink
+      - name: contacts
+        label: Contact Entries
+        component: componentContactEntry
+        list:
+          min: 0
+          max: 2
+          collapsible:
+            summary: Contact
 
   moduleStickyContent:
     type: object
@@ -309,6 +320,20 @@ components:
         list:
           min: 1
           collapsible: true
+
+  componentContactEntry:
+    type: object
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: mail
+        label: Mail
+        type: string
+      - name: link
+        label: Link
+        component: utilLink
 
   utilImage:
     type: object

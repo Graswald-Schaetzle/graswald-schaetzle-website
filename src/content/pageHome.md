@@ -137,4 +137,10 @@ moduleStickyContent:
     column:
       anchor: a
       title: a
+      sections:
+        - type: componentStickyColumnImage
+          title: Lorem Ipsum
+          image:
+            image: ../images/duck-rubber-1.jpg
+            alt: lorem
 ---

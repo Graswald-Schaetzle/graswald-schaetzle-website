@@ -171,4 +171,17 @@ moduleStickyContent:
             - We implement, not just advise – from prototype to process.
             - We work modularly – solo or together, with zero overhead.
             - We speak boardroom and backend.
+moduleTextLinkBlock:
+  - title: Forward
+    content: Transformation becomes real when the right people start the right
+      conversation. If our perspective aligns with your need, let’s talk.
+      Whether you’re navigating complexity, building clarity or driving change –
+      we’re here to move with you.
+  - title: Insight
+    content: >-
+      If you're exploring new ways to think, lead, and communicate in an AI age
+      – this is for you.  
+        
+      Subscribe to our newsletter Deep Intelligence now. Thoughtfully curated.
+      No noise. Just depth.
 ---

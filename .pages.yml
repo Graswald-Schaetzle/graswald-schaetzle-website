@@ -134,7 +134,7 @@ content:
         component: moduleStickyContent
       - name: moduleTextLinksBlock
         label: Text & Links Blocks
-        component: moduleTextLinksBlocks
+        component: moduleTextLinksBlock
         list:
           min: 1
           collapsible:

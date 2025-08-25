@@ -194,6 +194,11 @@ components:
   moduleStickyContent:
     type: object
     fields:
+      - name: anchor
+        label: Anchor
+        description: lowercase, hyphenated, e.g. this-section
+        type: string
+        required: true
       - name: intro
         label: Intro
         type: rich-text

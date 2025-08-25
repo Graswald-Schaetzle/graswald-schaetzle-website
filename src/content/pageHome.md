@@ -2,6 +2,7 @@
 title: Home
 h1: Graswald/Schaetzle, the boutique consultancy for a world in transition
 moduleStickyContent:
+  anchor: introduction
   intro: >-
     Graswald/Schaetzle is a boutique consultancy for a world in transition.
 

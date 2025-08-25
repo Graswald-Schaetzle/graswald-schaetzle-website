@@ -113,4 +113,28 @@ moduleStickyContent:
           fits, adapts and stays. Because the real value of innovation lies not
           in what it promises, but in what it sustainably delivers – for today,
           and for what comes after.
+  stickySection:
+    anchor: transformation
+    title: Transformation
+    content:
+      title: Convergence
+      content: >-
+        If you're looking for transformation that doesn’t get stuck in concepts
+        or fizzle in rollout – you need more than a consultant. You need
+        partners who understand the systems, the people and the pressure.  
+          
+        At Graswald/Schätzle, we combine communication, Tech strategy and
+        leadership insight to help you move complex change forward – clearly,
+        credibly, and with lasting effect.  
+          
+        We believe transformation only works when it connects technology with
+        narrative, direction with dialogue, and ambition with execution. Not
+        driven by hype – but by clarity, relevance and the will to act. We don’t
+        just advise. We co-create. We implement. We stay until it works.  
+          
+        Because the future shaped by AI shouldn’t be feared – it should be
+        built. Thoughtfully. Humanly. With you, not around you.
+    column:
+      anchor: a
+      title: a
 ---

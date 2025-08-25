@@ -71,10 +71,6 @@ content:
           collapsible:
             summary: Footer
         fields:
-          - name: title
-            label: Title
-            type: string
-            required: true
           - name: contact
             label: Contact
             type: text

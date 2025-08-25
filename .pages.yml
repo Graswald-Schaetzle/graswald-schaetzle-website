@@ -132,7 +132,7 @@ content:
       - name: moduleStickyContent
         label: Sticky Content
         component: moduleStickyContent
-      - name: moduleTextLinksBlocks
+      - name: moduleTextLinksBlock
         label: Text & Links Blocks
         component: moduleTextLinksBlocks
         list:
@@ -198,7 +198,7 @@ components:
         type: rich-text
         required: true
 
-  moduleTextLinksBlocks:
+  moduleTextLinksBlock:
     type: object
     fields:
       - name: title

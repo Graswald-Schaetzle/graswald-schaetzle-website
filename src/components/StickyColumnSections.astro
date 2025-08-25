@@ -13,13 +13,16 @@ type StickyColumnSection = Extract<
 
 interface Props {
   fields: StickyColumnSection;
+  unorderedList?: boolean;
 }
 
 import { marked } from 'marked';
 
 import { Image } from 'astro:assets';
 
-const { fields } = Astro.props;
+const { fields, unorderedList } = Astro.props;
+
+const ListTag = unorderedList ? 'ul' : 'ol';
 ---
 
 {
@@ -42,11 +45,11 @@ const { fields } = Astro.props;
   fields.type === 'componentStickyColumnList' && (
     <Fragment>
       <h3 class="title h5">{fields.title}</h3>
-      <ol class="list">
+      <ListTag class="list">
         {fields.text.map((item) => (
           <li class="h3">{item}</li>
         ))}
-      </ol>
+      </ListTag>
     </Fragment>
   )
 }
@@ -79,6 +82,17 @@ const { fields } = Astro.props;
       &::marker {
         font-family: var(--ff-secondary);
         font-size: var(--fs-5);
+      }
+    }
+  }
+
+  ul.list {
+    list-style-type: '¬';
+
+    li {
+      &::marker {
+        font-family: var(--ff-primary);
+        font-size: var(--fs-base);
       }
     }
   }

@@ -73,7 +73,7 @@ const parsedIntro = await marked(fields.intro);
         }
       </ol>
     </nav>
-    <div class="nested-grid">
+    <div class="sticky-columns">
       <div class="intro">
         <div class="richtext" set:html={parsedIntro} />
         <div class="intro-link">
@@ -113,66 +113,31 @@ const parsedIntro = await marked(fields.intro);
         }
       </div>
     </div>
-    <p class="content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus
-      ut assumenda tempora, sed optio et, labore, magnam dignissimos mollitia
-      impedit maxime itaque aspernatur. Doloremque fuga nam labore, incidunt
-      architecto odit porro dolores vel natus placeat, quibusdam quas eos iusto
-      accusamus odio at recusandae mollitia temporibus ullam voluptas atque
-      cupiditate! Quisquam, distinctio repellendus assumenda sequi cupiditate
-      architecto omnis iste consectetur beatae dolor suscipit iure nam possimus
-      nobis quod eligendi, magni laudantium, cum dolores porro similique debitis
-      ab eveniet?
-    </p>
-    <div class="sidebar">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        natus ut assumenda tempora, sed optio et, labore, magnam dignissimos
-        mollitia impedit maxime itaque aspernatur. Doloremque fuga nam labore,
-        incidunt architecto odit porro dolores vel natus placeat, quibusdam quas
-        eos iusto accusamus odio at recusandae mollitia temporibus ullam
-        voluptas atque cupiditate! Quisquam, distinctio repellendus assumenda
-        sequi cupiditate architecto omnis iste consectetur beatae dolor suscipit
-        iure nam possimus nobis quod eligendi, magni laudantium, cum dolores
-        porro similique debitis ab eveniet? Atque sunt id error et inventore
-        nulla, porro velit quas non omnis possimus laboriosam, fuga eveniet
-        delectus! Nemo exercitationem atque inventore quis! Voluptatibus
-        voluptatum sit consequatur saepe, quisquam maiores a amet optio,
-        veritatis tenetur voluptates, accusamus suscipit quod! Ab obcaecati
-        deserunt, itaque aspernatur voluptatem accusamus libero et natus rerum
-        sed eveniet aliquid sunt perspiciatis! Numquam, enim deserunt doloribus
-        eaque, itaque delectus in harum cupiditate porro animi ea, quaerat ipsa
-        suscipit sed architecto sint! Harum ullam ut, tenetur atque dolorem eum
-        dolore rem pariatur aperiam voluptates praesentium nostrum, repellendus
-        temporibus a nihil est quia, maiores nam iure aliquid sit deserunt id.
-        Fuga fugiat omnis autem, deleniti tenetur itaque. Recusandae suscipit
-        maxime magnam sed quaerat accusantium. Inventore placeat fugiat,
-        distinctio id ipsam neque deserunt?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        natus ut assumenda tempora, sed optio et, labore, magnam dignissimos
-        mollitia impedit maxime itaque aspernatur. Doloremque fuga nam labore,
-        incidunt architecto odit porro dolores vel natus placeat, quibusdam quas
-        eos iusto accusamus odio at recusandae mollitia temporibus ullam
-        voluptas atque cupiditate! Quisquam, distinctio repellendus assumenda
-        sequi cupiditate architecto omnis iste consectetur beatae dolor suscipit
-        iure nam possimus nobis quod eligendi, magni laudantium, cum dolores
-        porro similique debitis ab eveniet? Atque sunt id error et inventore
-        nulla, porro velit quas non omnis possimus laboriosam, fuga eveniet
-        delectus! Nemo exercitationem atque inventore quis! Voluptatibus
-        voluptatum sit consequatur saepe, quisquam maiores a amet optio,
-        veritatis tenetur voluptates, accusamus suscipit quod! Ab obcaecati
-        deserunt, itaque aspernatur voluptatem accusamus libero et natus rerum
-        sed eveniet aliquid sunt perspiciatis! Numquam, enim deserunt doloribus
-        eaque, itaque delectus in harum cupiditate porro animi ea, quaerat ipsa
-        suscipit sed architecto sint! Harum ullam ut, tenetur atque dolorem eum
-        dolore rem pariatur aperiam voluptates praesentium nostrum, repellendus
-        temporibus a nihil est quia, maiores nam iure aliquid sit deserunt id.
-        Fuga fugiat omnis autem, deleniti tenetur itaque. Recusandae suscipit
-        maxime magnam sed quaerat accusantium. Inventore placeat fugiat,
-        distinctio id ipsam neque deserunt?
-      </p>
+    <div id={fields.stickySection.column.anchor} class="sticky-section">
+      <div class="sticky-section-title sticky-column">
+        <div class="title-wrap">
+          <span class="index">3.</span>
+          <h2 class="title h1">{fields.stickySection.column.title}</h2>
+        </div>
+      </div>
+      <div class="sticky-section-content">
+        <h3 class="title h5">{fields.stickySection.content.title}</h3>
+        <div
+          class="content richtext h3"
+          set:html={await marked(fields.stickySection.content.content)}
+        />
+      </div>
+      <div class="sticky-section-sidebar">
+        <div class="sticky-column">
+          {
+            fields.stickySection.column.sections.map(async (section) => (
+              <div class="sticky-column-section">
+                <StickyColumnSections fields={section} unorderedList={true} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
     <div class="bg"></div>
   </div>
@@ -181,6 +146,7 @@ const parsedIntro = await marked(fields.intro);
 <style lang="scss">
   .grid {
     position: relative;
+    align-items: start;
   }
 
   .scroll-down {
@@ -221,6 +187,7 @@ const parsedIntro = await marked(fields.intro);
     grid-row: 3;
     position: sticky;
     bottom: 0;
+    z-index: 1;
     padding-bottom: to-rem(36);
 
     ol {
@@ -282,33 +249,6 @@ const parsedIntro = await marked(fields.intro);
     }
   }
 
-  .nested-grid {
-    grid-column: 1 / span 12;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: calc(100vh - var(--height-header));
-    grid-auto-rows: auto;
-    align-items: start;
-    padding-bottom: calc(to-rem(120) + to-rem(40));
-  }
-
-  .intro {
-    grid-column: 9 / span 4;
-    grid-row: 1;
-    position: sticky;
-    top: var(--height-header);
-    padding-top: calc(to-rem(144));
-
-    .intro-link {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      margin-top: to-rem(120);
-    }
-  }
-
   .sticky-column {
     --cols: 4;
     --col-width: calc(
@@ -320,11 +260,6 @@ const parsedIntro = await marked(fields.intro);
 
     > * {
       padding-left: calc(var(--col-width) + var(--grid-gutter));
-    }
-
-    &-section {
-      position: relative;
-      margin-top: to-rem(120);
     }
 
     .title-wrap {
@@ -363,34 +298,99 @@ const parsedIntro = await marked(fields.intro);
         }
       }
     }
+
+    .sticky-column-section {
+      position: relative;
+
+      &:not(:first-child) {
+        margin-top: to-rem(120);
+      }
+    }
   }
 
-  .sticky-column-1 {
-    grid-column: 1 / span 4;
+  .sticky-columns {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: calc(100vh - var(--height-header));
+    grid-auto-rows: auto;
+    align-items: start;
+    padding-bottom: calc(to-rem(120) + to-rem(40));
+
+    .intro {
+      grid-column: 9 / span 4;
+      grid-row: 1;
+      position: sticky;
+      top: var(--height-header);
+      padding-top: calc(to-rem(144));
+
+      .intro-link {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: to-rem(120);
+      }
+    }
+
+    .sticky-column-1 {
+      grid-column: 1 / span 4;
+      grid-row: 2;
+      margin-top: to-rem(208);
+    }
+
+    .sticky-column-2 {
+      grid-column: 5 / span 4;
+      grid-row: 3;
+    }
+  }
+
+  .sticky-section {
+    grid-column: 1 / span 12;
     grid-row: 2;
-    margin-top: to-rem(208);
-  }
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: start;
+    padding-top: to-rem(208);
 
-  .sticky-column-2 {
-    grid-column: 5 / span 4;
-    grid-row: 3;
-  }
+    .sticky-section-title {
+      grid-column: 9 / span 4;
+      padding-bottom: to-rem(120);
+    }
 
-  .content {
-    grid-column: 1 / span 8;
-    grid-row: 2;
-    position: sticky;
-    top: 0;
-  }
+    .sticky-section-content {
+      --cols: 8;
+      --col-width: calc(
+        (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
+      );
 
-  .sidebar {
-    grid-column: 9 / span 4;
-    grid-row: 2;
+      grid-column: 1 / span var(--cols);
+      grid-row: 2;
+      position: sticky;
+      top: to-rem(120);
+      padding-left: calc(var(--col-width) + var(--grid-gutter));
+
+      .title {
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        translate: -100% 0;
+        writing-mode: sideways-lr;
+      }
+    }
+
+    .sticky-section-sidebar {
+      grid-column: 9 / span 4;
+      grid-row: 2;
+      padding-bottom: to-rem(208);
+    }
   }
 
   .bg {
     grid-column: 1 / span 12;
     grid-row: 2 / 4;
+    align-self: stretch;
     z-index: -1;
     background-color: var(--c-beige);
     box-shadow: 0 0 0 100vmax var(--c-beige);

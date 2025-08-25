@@ -171,7 +171,7 @@ moduleStickyContent:
             - We implement, not just advise – from prototype to process.
             - We work modularly – solo or together, with zero overhead.
             - We speak boardroom and backend.
-moduleTextLinkBlock:
+moduleTextLinksBlocks:
   - title: Forward
     content: Transformation becomes real when the right people start the right
       conversation. If our perspective aligns with your need, let’s talk.

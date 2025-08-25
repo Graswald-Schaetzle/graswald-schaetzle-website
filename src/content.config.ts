@@ -24,7 +24,6 @@ const globals = defineCollection({
       ),
       footer: z.array(
         z.object({
-          title: z.string(),
           contact: z.string(),
           links: z.array(
             z.object({

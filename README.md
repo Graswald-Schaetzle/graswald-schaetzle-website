@@ -4,6 +4,9 @@ astro starter for creative projects, includes scss setup, gsap, lenis scroll, cu
 
 Feedback, ideas, and everything else always welcome.
 
+by [Jan Kohlbach](https://jankohlbach.com)
+repository: [GitHub](https://github.com/jankohlbach/astro-creative-base)
+
 ## What's inside?
 
 ### Opinionated SCSS setup

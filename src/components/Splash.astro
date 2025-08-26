@@ -1,68 +1,77 @@
----
-interface Props {
-  text?: string;
-}
-
-const { text = 'splash' } = Astro.props;
----
-
 <script>
   import { gsap } from 'gsap';
+  import { Flip } from 'gsap/all';
 
-  // import { scrollStop, scrollStart } from '../scripts/scroll';
+  import { scrollStart } from '../scripts/scroll';
 
   const splash: HTMLElement | null =
     document.querySelector('[data-js="splash"]');
+  const splashBg: HTMLElement | null = document.querySelector(
+    '[data-js="splash-bg"]',
+  );
+  const word1 = document.querySelector('[data-js="word-1"]');
+  const word2 = document.querySelector('[data-js="word-2"]');
+  const navWord1 = document.querySelector('[data-js="splash-word-1"]');
+  const navWord2 = document.querySelector('[data-js="splash-word-2"]');
 
   window.addEventListener('load', () => {
-    // scrollStop();
+    gsap.registerPlugin(Flip);
 
-    if (!sessionStorage.getItem('intro:done') && splash) {
-      splash.style.display = 'block';
-    }
-
-    const tl = gsap
-      .timeline({ delay: 0.2, defaults: { duration: 1, ease: 'power4.inOut' } })
-      .to(splash, {
-        scale: 0.8,
-      })
-      .to(splash, {
-        scale: 0.5,
+    const simpleSplash = () =>
+      gsap.to(splash, {
         autoAlpha: 0,
-      })
-      .call(
-        () => {
-          window.dispatchEvent(new Event('intro:done'));
+        duration: 0.5,
+        delay: 0.2,
+        onComplete: () => {
+          sessionStorage.setItem('splash:done', 'true');
+          scrollStart();
         },
-        [],
-        '<0.4',
-      )
-      .call(() => {
-        if (!sessionStorage.getItem('intro:done')) {
-          // scrollStart();
-          sessionStorage.setItem('intro:done', 'true');
-        }
       });
 
-    if (sessionStorage.getItem('intro:done') && splash) {
-      tl.progress(1);
-      window.dispatchEvent(new Event('intro:done'));
-      setTimeout(() => {
-        // scrollStart();
-      }, 500);
+    if (!sessionStorage.getItem('splash:done')) {
+      gsap
+        .timeline({
+          defaults: { duration: 1, ease: 'power3.out' },
+          onComplete: () => {
+            sessionStorage.setItem('splash:done', 'true');
+            scrollStart();
+          },
+        })
+        .fromTo(
+          [word1, word2],
+          { x: -20, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, stagger: 0.1 },
+        )
+        .add(
+          Flip.fit(word1, navWord1, {
+            duration: 1,
+            ease: 'power3.out',
+            props: 'fontSize,color',
+          }) as gsap.core.Tween,
+        )
+        .add(
+          Flip.fit(word2, navWord2, {
+            duration: 1,
+            ease: 'power3.out',
+            props: 'fontSize,color',
+          }) as gsap.core.Tween,
+          '<',
+        )
+        .to(splashBg, { autoAlpha: 0 }, '<0.1')
+        .to([word1, word2], { autoAlpha: 0 }, '<0.2');
+    } else {
+      simpleSplash();
     }
-  });
-
-  window.addEventListener('intro:done', () => {
-    document.querySelectorAll('[data-inview-manual]').forEach((el) => {
-      el.classList.add('inview');
-    });
   });
 </script>
 
 <div class="splash" data-js="splash">
-  <div class="content">
-    <h1>{text}</h1>
+  <div class="bg" data-js="splash-bg"></div>
+  <div class="container">
+    <div class="grid">
+      <span class="word word-1 h2" data-js="word-1">Graswald</span>
+      <span class="word word-2 h2" data-js="word-2">Schaetzle</span>
+    </div>
   </div>
 </div>
 
@@ -70,21 +79,51 @@ const { text = 'splash' } = Astro.props;
   .splash {
     position: fixed;
     inset: 0;
-    display: none;
     width: 100vw;
     height: 100%;
     z-index: var(--zi-splash);
-    background-color: var(--c-dark);
+    color: var(--c-primary);
+    pointer-events: none;
   }
 
-  .content {
-    display: grid;
+  .bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    place-items: center;
+    background-color: var(--c-primary-dark);
   }
 
-  h1 {
-    color: var(--c-light);
+  .container,
+  .grid {
+    height: 100%;
+    align-items: center;
+  }
+
+  .word {
+    opacity: 0;
+  }
+
+  .word-1 {
+    grid-column: 1 / span 4;
+  }
+
+  .word-2 {
+    grid-column: 5 / span 4;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      width: 0.3em;
+      margin-left: -0.3em;
+      aspect-ratio: 11 / 32;
+      background-image: inline-svg(
+        "<svg viewBox='0 0 11 32' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.0001 0.52002L2.29006 31.48H0.810059L9.52006 0.52002H11.0001Z' fill='#B2C598'/></svg>"
+      );
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
 </style>

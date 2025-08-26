@@ -7,7 +7,7 @@ sections:
         title: Legal
       - type: moduleRichText
         content: >-
-          ### **The standard Lorem Ipsum passage, used since the 1500s**
+          ## The standard Lorem Ipsum passage, used since the 1500s
 
 
           <p style="text-align: justify">"Lorem ipsum dolor sit amet,
@@ -29,8 +29,8 @@ sections:
           *   <p style="text-align: justify">number 3</p>
 
 
-          ### **Section 1.10.32 of "de Finibus Bonorum et Malorum", written by
-          Cicero in 45 BC**
+          ### Section 1.10.32 of "de Finibus Bonorum et Malorum", written by
+          Cicero in 45 BC
 
 
           <p style="text-align: justify">"Sed ut perspiciatis unde omnis iste
@@ -49,7 +49,7 @@ sections:
           voluptas nulla pariatur?"</p>
 
 
-          ### **1914 translation by H. Rackham**
+          ### 1914 translation by H. Rackham
 
 
           <p style="text-align: justify">"But I must explain to you how all this

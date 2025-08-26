@@ -254,7 +254,7 @@ const parsedIntro = await marked(fields.intro);
   }
 
   .sticky-column {
-    --cols: 4;
+    --cols: 7;
     --col-width: calc(
       (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
     );
@@ -339,14 +339,15 @@ const parsedIntro = await marked(fields.intro);
     }
 
     .sticky-column-1 {
-      grid-column: 1 / span 4;
+      grid-column: 1 / span 7;
       grid-row: 2;
       margin-top: to-rem(208);
     }
 
     .sticky-column-2 {
-      grid-column: 5 / span 4;
+      grid-column: 1 / span 7;
       grid-row: 3;
+      margin-top: to-rem(144);
     }
   }
 
@@ -399,5 +400,22 @@ const parsedIntro = await marked(fields.intro);
     background-color: var(--c-beige);
     box-shadow: 0 0 0 100vmax var(--c-beige);
     clip-path: inset(0 -100vmax);
+  }
+
+  @media (min-width: 1440px) {
+    .sticky-column {
+      --cols: 4;
+    }
+
+    .sticky-columns {
+      .sticky-column-1 {
+        grid-column: 1 / span 4;
+      }
+
+      .sticky-column-2 {
+        grid-column: 5 / span 4;
+        margin-top: 0;
+      }
+    }
   }
 </style>

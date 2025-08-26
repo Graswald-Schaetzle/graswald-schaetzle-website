@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 import Layout from '@layouts/Layout.astro';
 import StickyContent from '@components/StickyContent.astro';
+import ModuleTextLinksBlock from '@components/ModuleTextLinksBlock.astro';
 
 const [page] = await getCollection('pageHome');
 ---
@@ -15,5 +16,12 @@ const [page] = await getCollection('pageHome');
     <section>
       <StickyContent fields={page.data.moduleStickyContent} />
     </section>
+    {
+      page.data.moduleTextLinksBlock.map((section) => (
+        <section>
+          <ModuleTextLinksBlock fields={section} />
+        </section>
+      ))
+    }
   </main>
 </Layout>

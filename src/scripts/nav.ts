@@ -33,12 +33,13 @@ const toTop = (element: Element, percentage: number) => {
 };
 
 window.addEventListener('load', () => {
-  const nav = document.querySelector('[data-js="io-nav"]');
+  const nav = document.querySelector('[data-js="nav"]');
   const navItems = nav?.querySelectorAll('a');
-  const navWord1 = document.querySelector('[data-js="nav-word-1"]');
-  const navWord2 = document.querySelector('[data-js="nav-word-2"]');
+  // const navWord1 = document.querySelector('[data-js="nav-word-1"]');
+  // const navWord2 = document.querySelector('[data-js="nav-word-2"]');
 
-  if (!navItems || !navWord1 || !navWord2) return;
+  // if (!navItems || !navWord1 || !navWord2) return;
+  if (!navItems) return;
 
   const sections = Array.from(navItems)
     .map((item) => document.querySelector(item.hash))
@@ -52,30 +53,30 @@ window.addEventListener('load', () => {
         const sectionId = entry.target.id;
 
         if (entry.isIntersecting) {
-          navItems.forEach((link) => {
+          navItems.forEach((link, i) => {
             if (link.hash === `#${sectionId}`) {
               link.classList.add('is-active');
 
-              // special handling for sticky introduction
-              if (link.hash !== '#introduction') {
+              // special handling for first sticky section
+              if (i > 0) {
                 navItems[0].classList.remove('is-active');
               }
 
               // handle nav masks
-              if (link.hash === '#communication') {
-                fromBottom(navWord1, 19);
-              }
-              if (link.hash === '#technology') {
-                fromBottom(navWord2, 20);
-              }
-              if (
-                link.hash === '#transformation' &&
-                !navWord1.classList.contains('from-bottom') &&
-                !navWord2.classList.contains('from-bottom')
-              ) {
-                fromBottom(navWord1, 19);
-                fromBottom(navWord2, 20);
-              }
+              // if (link.hash === '#communication') {
+              //   fromBottom(navWord1, 19);
+              // }
+              // if (link.hash === '#technology') {
+              //   fromBottom(navWord2, 20);
+              // }
+              // if (
+              //   link.hash === '#transformation' &&
+              //   !navWord1.classList.contains('from-bottom') &&
+              //   !navWord2.classList.contains('from-bottom')
+              // ) {
+              //   fromBottom(navWord1, 19);
+              //   fromBottom(navWord2, 20);
+              // }
             }
           });
         } else {
@@ -84,29 +85,29 @@ window.addEventListener('load', () => {
               link.classList.remove('is-active');
 
               // handle nav masks
-              if (
-                link.hash === '#communication' &&
-                navWord1.classList.contains('from-bottom')
-              ) {
-                toTop(navWord1, 19);
-              }
-              if (
-                link.hash === '#technology' &&
-                navWord2.classList.contains('from-bottom')
-              ) {
-                toTop(navWord2, 20);
-              }
-              if (
-                link.hash === '#transformation' &&
-                entry.boundingClientRect.top > 0
-              ) {
-                toTop(navWord1, 19);
-                toTop(navWord2, 20);
-              }
+              // if (
+              //   link.hash === '#communication' &&
+              //   navWord1.classList.contains('from-bottom')
+              // ) {
+              //   toTop(navWord1, 19);
+              // }
+              // if (
+              //   link.hash === '#technology' &&
+              //   navWord2.classList.contains('from-bottom')
+              // ) {
+              //   toTop(navWord2, 20);
+              // }
+              // if (
+              //   link.hash === '#transformation' &&
+              //   entry.boundingClientRect.top > 0
+              // ) {
+              //   toTop(navWord1, 19);
+              //   toTop(navWord2, 20);
+              // }
             }
           });
 
-          // special handling for sticky introduction
+          // special handling for first sticky section
           if (
             !Array.from(navItems).some((link) =>
               link.classList.contains('is-active'),
@@ -119,7 +120,7 @@ window.addEventListener('load', () => {
       });
     },
     {
-      rootMargin: '-15% 0% -75% 0%',
+      rootMargin: '-25% 0% -75% 0%',
       threshold: 0,
     },
   );

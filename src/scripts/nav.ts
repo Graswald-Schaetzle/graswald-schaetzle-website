@@ -1,51 +1,26 @@
-import { gsap } from 'gsap';
-
-// TODO: direction aware?
-const fromBottom = (element: Element, percentage: number) => {
-  gsap.fromTo(
-    element,
-    {
-      clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 100%, 100% 100%, 100% 100%, ${percentage}% 100%, ${percentage}% 100%, 0% 100%)`,
-    },
-    {
-      clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%, ${percentage}% 100%, 0% 100%)`,
-      duration: 1,
-    },
-  );
-  element.classList.remove('to-top');
-  element.classList.add('from-bottom');
-};
-
-// TODO: direction aware?
-const toTop = (element: Element, percentage: number) => {
-  gsap.fromTo(
-    element,
-    {
-      clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%, ${percentage}% 100%, 0% 100%)`,
-    },
-    {
-      clipPath: `polygon(0% 0%, ${percentage}% 0%, ${percentage}% 0%, 100% 0%, 100% 0%, ${percentage}% 0%, ${percentage}% 100%, 0% 100%)`,
-      duration: 1,
-    },
-  );
-  element.classList.remove('from-bottom');
-  element.classList.add('to-top');
-};
-
 window.addEventListener('load', () => {
   const nav = document.querySelector('[data-js="nav"]');
   const navItems = nav?.querySelectorAll('a');
-  // const navWord1 = document.querySelector('[data-js="nav-word-1"]');
-  // const navWord2 = document.querySelector('[data-js="nav-word-2"]');
+  const navMask1 = document.querySelector('[data-js="nav-mask-1"]');
+  const navMask2 = document.querySelector('[data-js="nav-mask-2"]');
 
-  // if (!navItems || !navWord1 || !navWord2) return;
-  if (!navItems) return;
+  if (!navItems || !navMask1 || !navMask2) return;
 
   const sections = Array.from(navItems)
     .map((item) => document.querySelector(item.hash))
     .filter((section) => section instanceof HTMLElement);
 
   if (!sections) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navMask1.classList.add('is-scrolled');
+      navMask2.classList.add('is-scrolled');
+    } else {
+      navMask1.classList.remove('is-scrolled');
+      navMask2.classList.remove('is-scrolled');
+    }
+  });
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -63,47 +38,34 @@ window.addEventListener('load', () => {
               }
 
               // handle nav masks
-              // if (link.hash === '#communication') {
-              //   fromBottom(navWord1, 19);
-              // }
-              // if (link.hash === '#technology') {
-              //   fromBottom(navWord2, 20);
-              // }
-              // if (
-              //   link.hash === '#transformation' &&
-              //   !navWord1.classList.contains('from-bottom') &&
-              //   !navWord2.classList.contains('from-bottom')
-              // ) {
-              //   fromBottom(navWord1, 19);
-              //   fromBottom(navWord2, 20);
-              // }
+              if (i === 1) {
+                navMask1.classList.add('is-visible');
+              }
+              if (i === 2) {
+                navMask2.classList.add('is-visible');
+              }
+              if (i === 3) {
+                navMask1.classList.add('is-visible');
+                navMask2.classList.add('is-visible');
+              }
             }
           });
         } else {
-          navItems.forEach((link) => {
+          navItems.forEach((link, i) => {
             if (link.hash === `#${sectionId}`) {
               link.classList.remove('is-active');
 
               // handle nav masks
-              // if (
-              //   link.hash === '#communication' &&
-              //   navWord1.classList.contains('from-bottom')
-              // ) {
-              //   toTop(navWord1, 19);
-              // }
-              // if (
-              //   link.hash === '#technology' &&
-              //   navWord2.classList.contains('from-bottom')
-              // ) {
-              //   toTop(navWord2, 20);
-              // }
-              // if (
-              //   link.hash === '#transformation' &&
-              //   entry.boundingClientRect.top > 0
-              // ) {
-              //   toTop(navWord1, 19);
-              //   toTop(navWord2, 20);
-              // }
+              if (i === 1) {
+                navMask1.classList.remove('is-visible');
+              }
+              if (i === 2) {
+                navMask2.classList.remove('is-visible');
+              }
+              if (i === 3 && entry.boundingClientRect.top > 0) {
+                navMask1.classList.remove('is-visible');
+                navMask2.classList.remove('is-visible');
+              }
             }
           });
 

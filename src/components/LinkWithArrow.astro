@@ -49,7 +49,7 @@ const { fields } = Astro.props;
     }
 
     .text {
-      width: calc(50% + (var(--grid-gutter) / 2));
+      width: 80%;
     }
 
     .icon-wrap {
@@ -73,6 +73,12 @@ const { fields } = Astro.props;
 
     .icon-second {
       translate: -250% 0;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .text {
+      width: calc(50% + (var(--grid-gutter) / 2));
     }
   }
 </style>

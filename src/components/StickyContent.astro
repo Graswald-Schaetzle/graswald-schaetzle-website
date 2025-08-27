@@ -86,7 +86,7 @@ const parsedIntro = await marked(fields.intro);
       >
         <div class="title-wrap">
           <span class="index">1.</span>
-          <h2 class="title h1">{fields.stickyColumn1.title}</h2>
+          <h2 class="title h2">{fields.stickyColumn1.title}</h2>
         </div>
         {
           fields.stickyColumn1.sections.map(async (section) => (
@@ -102,7 +102,7 @@ const parsedIntro = await marked(fields.intro);
       >
         <div class="title-wrap">
           <span class="index">2.</span>
-          <h2 class="title h1">{fields.stickyColumn2.title}</h2>
+          <h2 class="title h2">{fields.stickyColumn2.title}</h2>
         </div>
         {
           fields.stickyColumn2.sections.map((section) => (
@@ -117,7 +117,7 @@ const parsedIntro = await marked(fields.intro);
       <div class="sticky-section-title sticky-column">
         <div class="title-wrap">
           <span class="index">3.</span>
-          <h2 class="title h1">{fields.stickySection.column.title}</h2>
+          <h2 class="title h2">{fields.stickySection.column.title}</h2>
         </div>
       </div>
       <div class="sticky-section-content">
@@ -154,6 +154,7 @@ const parsedIntro = await marked(fields.intro);
   }
 
   .scroll-down {
+    display: none;
     position: absolute;
     top: calc(100vh - var(--height-header));
     left: 0;
@@ -187,6 +188,7 @@ const parsedIntro = await marked(fields.intro);
   }
 
   .navigation {
+    display: none;
     grid-column: 9 / span 4;
     grid-row: 3;
     position: sticky;
@@ -239,6 +241,7 @@ const parsedIntro = await marked(fields.intro);
         width: calc(50% - (var(--grid-gutter) / 2));
 
         &::before {
+          flex-shrink: 0;
           content: '';
           width: 0.3em;
           margin-left: -0.3em;
@@ -254,7 +257,7 @@ const parsedIntro = await marked(fields.intro);
   }
 
   .sticky-column {
-    --cols: 7;
+    --cols: 12;
     --col-width: calc(
       (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
     );
@@ -263,15 +266,19 @@ const parsedIntro = await marked(fields.intro);
     scroll-margin-top: to-rem(208);
 
     > * {
-      padding-left: calc(var(--col-width) + var(--grid-gutter));
+      padding-left: calc(
+        (var(--col-width) + var(--grid-gutter)) * var(--mult, 1)
+      );
     }
 
     .title-wrap {
+      --mult: 2;
+
       position: relative;
 
       .index {
         position: absolute;
-        top: to-rem(12);
+        top: to-rem(6);
         left: 0;
         display: inline-block;
         padding: to-rem(5) to-rem(10);
@@ -281,7 +288,6 @@ const parsedIntro = await marked(fields.intro);
         letter-spacing: 0;
         background-color: var(--c-primary);
         border-radius: to-rem(24);
-        translate: to-rem(-10) 0;
       }
 
       .title {
@@ -307,7 +313,7 @@ const parsedIntro = await marked(fields.intro);
       position: relative;
 
       &:not(:first-child) {
-        margin-top: to-rem(120);
+        margin-top: to-rem(90);
       }
     }
   }
@@ -317,37 +323,35 @@ const parsedIntro = await marked(fields.intro);
     grid-row: 1;
     display: grid;
     grid-template-columns: subgrid;
-    grid-template-rows: calc(100vh - var(--height-header));
-    grid-auto-rows: auto;
     align-items: start;
     padding-bottom: calc(to-rem(120) + to-rem(40));
 
+    .intro,
+    .sticky-column-1,
+    .sticky-column-2 {
+      max-width: min(50ch, 100%);
+    }
+
     .intro {
-      grid-column: 9 / span 4;
+      grid-column: 1 / span 12;
       grid-row: 1;
-      position: sticky;
-      top: var(--height-header);
-      padding-top: calc(to-rem(144));
+      padding-top: to-rem(108);
 
       .intro-link {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        margin-top: to-rem(120);
+        margin-top: to-rem(90);
       }
     }
 
     .sticky-column-1 {
-      grid-column: 1 / span 7;
+      grid-column: 1 / span 12;
       grid-row: 2;
-      margin-top: to-rem(208);
+      margin-top: to-rem(180);
     }
 
     .sticky-column-2 {
-      grid-column: 1 / span 7;
+      grid-column: 1 / span 12;
       grid-row: 3;
-      margin-top: to-rem(144);
+      margin-top: to-rem(180);
     }
   }
 
@@ -357,39 +361,38 @@ const parsedIntro = await marked(fields.intro);
     display: grid;
     grid-template-columns: subgrid;
     align-items: start;
-    padding-top: to-rem(208);
+    padding-top: to-rem(156);
 
     .sticky-section-title {
-      grid-column: 9 / span 4;
-      padding-bottom: to-rem(120);
+      grid-column: 1 / span 12;
+      padding-bottom: to-rem(90);
     }
 
     .sticky-section-content {
-      --cols: 8;
+      --cols: 12;
       --col-width: calc(
         (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
       );
 
       grid-column: 1 / span var(--cols);
       grid-row: 2;
-      position: sticky;
-      top: calc(to-rem(120) + to-rem(60));
+      position: relative;
       padding-left: calc(var(--col-width) + var(--grid-gutter));
-      padding-bottom: to-rem(36);
+      padding-bottom: to-rem(90);
 
       .title {
         position: absolute;
         top: 0.5em;
         left: 0;
-        translate: -100% 0;
         writing-mode: sideways-lr;
       }
     }
 
     .sticky-section-sidebar {
-      grid-column: 9 / span 4;
-      grid-row: 2;
-      padding-bottom: to-rem(208);
+      grid-column: 1 / span 12;
+      grid-row: 3;
+      padding-bottom: to-rem(156);
+      max-width: min(50ch, 100%);
     }
   }
 
@@ -401,6 +404,111 @@ const parsedIntro = await marked(fields.intro);
     background-color: var(--c-beige);
     box-shadow: 0 0 0 100vmax var(--c-beige);
     clip-path: inset(0 -100vmax);
+  }
+
+  @media (min-height: 900px) {
+    .sticky-columns {
+      .intro {
+        padding-top: to-rem(144);
+
+        .intro-link {
+          margin-top: to-rem(120);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 960px) {
+    .scroll-down {
+      display: block;
+    }
+
+    .navigation {
+      display: block;
+    }
+
+    .sticky-column {
+      --cols: 7;
+
+      .title-wrap {
+        --mult: 1;
+
+        .index {
+          top: to-rem(10);
+          translate: to-rem(-10) 0;
+        }
+      }
+
+      .sticky-column-section {
+        &:not(:first-child) {
+          margin-top: to-rem(120);
+        }
+      }
+    }
+
+    .sticky-columns {
+      grid-template-rows: calc(100vh - var(--height-header));
+      grid-auto-rows: auto;
+
+      .intro,
+      .sticky-column-1,
+      .sticky-column-2 {
+        max-width: none;
+      }
+
+      .intro {
+        grid-column: 9 / span 4;
+        position: sticky;
+        top: var(--height-header);
+        padding-top: to-rem(48);
+
+        .intro-link {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          margin-top: to-rem(48);
+        }
+      }
+
+      .sticky-column-1 {
+        grid-column: 1 / span 7;
+        margin-top: to-rem(208);
+      }
+
+      .sticky-column-2 {
+        grid-column: 1 / span 7;
+        margin-top: to-rem(144);
+      }
+    }
+
+    .sticky-section {
+      padding-top: to-rem(208);
+
+      .sticky-section-title {
+        grid-column: 9 / span 4;
+        padding-bottom: to-rem(120);
+      }
+
+      .sticky-section-content {
+        --cols: 8;
+
+        position: sticky;
+        top: calc(to-rem(120) + to-rem(60));
+        padding-bottom: to-rem(36);
+
+        .title {
+          translate: -100% 0;
+        }
+      }
+
+      .sticky-section-sidebar {
+        grid-column: 9 / span 4;
+        grid-row: 2;
+        padding-bottom: to-rem(208);
+        max-width: none;
+      }
+    }
   }
 
   @media (min-width: 1440px) {

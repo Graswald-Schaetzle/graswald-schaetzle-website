@@ -72,12 +72,12 @@ const links = await getEntries(footer.links.map((link) => link.link));
   }
 
   .navigation {
-    --cols: 5;
+    --cols: 12;
     --col-width: calc(
       (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
     );
 
-    grid-column: 8 / span var(--cols);
+    grid-column: 1 / span var(--cols);
     grid-row: 1;
     margin-bottom: to-rem(160);
 
@@ -138,12 +138,12 @@ const links = await getEntries(footer.links.map((link) => link.link));
   }
 
   .content {
-    --cols: 4;
+    --cols: 6;
     --col-width: calc(
       (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
     );
 
-    grid-column: 9 / span var(--cols);
+    grid-column: 7 / span var(--cols);
     grid-row: 2;
     width: 100%;
     display: flex;
@@ -175,7 +175,7 @@ const links = await getEntries(footer.links.map((link) => link.link));
   }
 
   .symbol {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 3;
     grid-row: 2;
     max-width: to-rem(610);
 
@@ -195,6 +195,24 @@ const links = await getEntries(footer.links.map((link) => link.link));
         transform-origin: 75% 50%;
         animation-name: symbol2;
       }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .navigation {
+      --cols: 5;
+
+      grid-column: 8 / span var(--cols);
+    }
+
+    .content {
+      --cols: 4;
+
+      grid-column: 9 / span var(--cols);
+    }
+
+    .symbol {
+      grid-column: 1 / span 6;
     }
   }
 

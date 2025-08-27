@@ -59,7 +59,6 @@ const ListTag = unorderedList ? 'ul' : 'ol';
     position: absolute;
     top: 0.5em;
     left: 0;
-    translate: -100% 0;
     writing-mode: sideways-lr;
   }
 
@@ -72,9 +71,9 @@ const ListTag = unorderedList ? 'ul' : 'ol';
   .list {
     display: flex;
     flex-direction: column;
-    gap: to-rem(36);
+    gap: to-rem(27);
     list-style: upper-alpha;
-    translate: calc(var(--grid-gutter) * -1) 0;
+    padding-left: calc(var(--grid-gutter) * 1.5);
 
     li {
       padding-left: var(--grid-gutter);
@@ -94,6 +93,18 @@ const ListTag = unorderedList ? 'ul' : 'ol';
         font-family: var(--ff-primary);
         font-size: var(--fs-base);
       }
+    }
+  }
+
+  @media (min-width: 960px) {
+    .title {
+      translate: -100% 0;
+    }
+
+    .list {
+      gap: to-rem(36);
+      padding-left: 0;
+      translate: calc(var(--grid-gutter) * -1) 0;
     }
   }
 </style>

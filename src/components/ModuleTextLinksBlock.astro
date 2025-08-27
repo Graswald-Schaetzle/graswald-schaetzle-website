@@ -21,7 +21,7 @@ const parsedContent = await marked(fields.content);
   <div class="grid">
     <div class="content">
       <h3 class="title h5">{fields.title}</h3>
-      <div class="richtext h1" set:html={parsedContent} />
+      <div class="richtext h2" set:html={parsedContent} />
     </div>
     <div class="cta">
       <LinkWithArrow fields={fields.link} />
@@ -59,7 +59,7 @@ const parsedContent = await marked(fields.content);
 
 <style lang="scss">
   .module {
-    margin-block: to-rem(240);
+    margin-block: to-rem(180);
 
     &[id] {
       scroll-margin-top: to-rem(208);
@@ -71,7 +71,7 @@ const parsedContent = await marked(fields.content);
   }
 
   .content {
-    --cols: 8;
+    --cols: 12;
     --col-width: calc(
       (100% - (var(--grid-gutter) * (var(--cols) - 1))) / var(--cols)
     );
@@ -84,33 +84,30 @@ const parsedContent = await marked(fields.content);
       position: absolute;
       top: 0.5em;
       left: 0;
-      translate: -100% 0;
       writing-mode: sideways-lr;
     }
   }
 
   .cta {
-    grid-column: 9 / span 4;
+    grid-column: 2 / span 11;
+    margin-top: calc(to-rem(90) - var(--grid-gutter));
   }
 
   .contacts {
-    grid-column: 2 / span 7;
+    grid-column: 2 / span 11;
     display: grid;
     grid-template-columns: subgrid;
     margin-top: calc(to-rem(120) - var(--grid-gutter));
   }
 
   .contact {
+    grid-column: 1 / span 12;
     display: flex;
     flex-direction: column;
     list-style: none;
 
-    &:nth-child(odd) {
-      grid-column: 1 / span 3;
-    }
-
-    &:nth-child(even) {
-      grid-column: 5 / span 3;
+    + .contact {
+      margin-top: to-rem(90);
     }
 
     .title {
@@ -121,10 +118,65 @@ const parsedContent = await marked(fields.content);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: to-rem(48);
+      margin-top: to-rem(36);
 
       svg {
         height: 0.5em;
+      }
+    }
+  }
+
+  @media (min-width: 560px) {
+    .contacts {
+      .contact {
+        + .contact {
+          margin-top: 0;
+        }
+
+        &:nth-child(odd) {
+          grid-column: 1 / span 5;
+        }
+
+        &:nth-child(even) {
+          grid-column: 7 / span 5;
+        }
+
+        .link {
+          margin-top: to-rem(48);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 960px) {
+    .module {
+      margin-block: to-rem(240);
+    }
+
+    .content {
+      --cols: 8;
+
+      .title {
+        translate: -100% 0;
+      }
+    }
+
+    .cta {
+      grid-column: 9 / span 4;
+      margin-top: 0;
+    }
+
+    .contacts {
+      grid-column: 2 / span 7;
+    }
+
+    .contact {
+      &:nth-child(odd) {
+        grid-column: 1 / span 3;
+      }
+
+      &:nth-child(even) {
+        grid-column: 5 / span 3;
       }
     }
   }

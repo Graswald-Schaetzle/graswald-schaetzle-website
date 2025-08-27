@@ -17,7 +17,7 @@ const { fields } = Astro.props;
 const parsedContent = await marked(fields.content);
 ---
 
-<div class="module container">
+<div id={fields.anchor ? fields.anchor : undefined} class="module container">
   <div class="grid">
     <div class="content">
       <h3 class="title h5">{fields.title}</h3>
@@ -60,6 +60,10 @@ const parsedContent = await marked(fields.content);
 <style lang="scss">
   .module {
     margin-block: to-rem(240);
+
+    &[id] {
+      scroll-margin-top: to-rem(208);
+    }
   }
 
   .grid {

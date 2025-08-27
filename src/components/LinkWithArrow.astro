@@ -2,7 +2,13 @@
 const { fields } = Astro.props;
 ---
 
-<a href={fields.link} target="_blank" class="link-with-arrow h4">
+<a
+  href={fields.link}
+  target={fields.link.startsWith('#') || fields.link.startsWith('/#')
+    ? '_self'
+    : '_blank'}
+  class="link-with-arrow h4"
+>
   <span class="text">{fields.linkText}</span>
   <span class="icon-wrap">
     <span class="icons">

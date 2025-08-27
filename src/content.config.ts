@@ -97,6 +97,7 @@ const pageHome = defineCollection({
       }),
       moduleTextLinksBlock: z.array(
         z.object({
+          anchor: z.string().optional(),
           title: z.string(),
           content: z.string(),
           link: z.object({

@@ -356,7 +356,7 @@ components:
     fields:
       - name: link
         label: Link
-        description: 'for anchors: lowercase, hyphenated, e.g. this-section'
+        description: 'for anchors: lowercase, hyphenated, prefixed with # e.g. #this-section'
         type: string
         required: true
       - name: linkText

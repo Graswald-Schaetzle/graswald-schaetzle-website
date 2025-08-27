@@ -373,8 +373,9 @@ const parsedIntro = await marked(fields.intro);
       grid-column: 1 / span var(--cols);
       grid-row: 2;
       position: sticky;
-      top: to-rem(120);
+      top: calc(to-rem(120) + to-rem(60));
       padding-left: calc(var(--col-width) + var(--grid-gutter));
+      padding-bottom: to-rem(36);
 
       .title {
         position: absolute;

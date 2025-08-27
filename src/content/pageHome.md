@@ -140,7 +140,7 @@ moduleStickyContent:
       title: Transformation
       sections:
         - type: componentStickyColumnImage
-          title: Lorem Ipsum
+          title: Team
           image:
             image: ../images/Team.webp
             alt: Team Portrait

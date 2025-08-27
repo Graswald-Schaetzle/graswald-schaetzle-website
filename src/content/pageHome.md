@@ -41,7 +41,7 @@ moduleStickyContent:
       - type: componentStickyColumnImage
         title: Naïs Graswald
         image:
-          image: ../images/Naïs-Graswald-Portrait.webp
+          image: ../images/Nais-Graswald-Portrait.webp
           alt: Naïs Graswald Portrait
       - type: componentStickyColumnContent
         title: Origin

@@ -234,7 +234,7 @@ components:
         type: rich-text
         required: true
       - name: introLink
-        label: Link
+        label: Link (or Anchor)
         component: utilLink
       - name: stickyColumn1
         label: Sticky Column 1
@@ -352,6 +352,7 @@ components:
     fields:
       - name: link
         label: Link
+        description: 'for anchors: lowercase, hyphenated, e.g. this-section'
         type: string
         required: true
       - name: linkText

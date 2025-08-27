@@ -448,14 +448,14 @@ const parsedIntro = await marked(fields.intro);
         grid-column: 9 / span 4;
         position: sticky;
         top: var(--height-header);
-        padding-top: to-rem(48);
+        padding-top: to-rem(144);
 
         .intro-link {
           position: absolute;
           top: 100%;
           left: 0;
           width: 100%;
-          margin-top: to-rem(48);
+          margin-top: to-rem(120);
         }
       }
 
@@ -516,13 +516,13 @@ const parsedIntro = await marked(fields.intro);
     }
   }
 
-  @media (min-height: 900px) {
+  @media (max-height: 899px) {
     .sticky-columns {
       .intro {
-        padding-top: to-rem(144);
+        padding-top: to-rem(90);
 
         .intro-link {
-          margin-top: to-rem(120);
+          margin-top: to-rem(90);
         }
       }
     }

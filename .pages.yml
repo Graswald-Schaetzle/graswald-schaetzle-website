@@ -201,6 +201,11 @@ components:
   moduleTextLinksBlock:
     type: object
     fields:
+      - name: anchor
+        label: Anchor
+        description: lowercase, hyphenated, e.g. this-section
+        type: string
+        required: true
       - name: title
         label: Title
         type: string
@@ -310,11 +315,6 @@ components:
   componentStickyColumnList:
     type: object
     fields:
-      - name: anchor
-        label: Anchor
-        description: lowercase, hyphenated, e.g. this-section
-        type: string
-        required: true
       - name: title
         label: Title
         type: string

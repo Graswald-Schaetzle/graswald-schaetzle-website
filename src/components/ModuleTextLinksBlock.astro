@@ -127,23 +127,21 @@ const parsedContent = await marked(fields.content);
   }
 
   @media (min-width: 560px) {
-    .contacts {
-      .contact {
-        + .contact {
-          margin-top: 0;
-        }
+    .contact {
+      + .contact {
+        margin-top: 0;
+      }
 
-        &:nth-child(odd) {
-          grid-column: 1 / span 5;
-        }
+      &:nth-child(odd) {
+        grid-column: 1 / span 5;
+      }
 
-        &:nth-child(even) {
-          grid-column: 7 / span 5;
-        }
+      &:nth-child(even) {
+        grid-column: 7 / span 5;
+      }
 
-        .link {
-          margin-top: to-rem(48);
-        }
+      .link {
+        margin-top: to-rem(48);
       }
     }
   }

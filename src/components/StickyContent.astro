@@ -406,18 +406,6 @@ const parsedIntro = await marked(fields.intro);
     clip-path: inset(0 -100vmax);
   }
 
-  @media (min-height: 900px) {
-    .sticky-columns {
-      .intro {
-        padding-top: to-rem(144);
-
-        .intro-link {
-          margin-top: to-rem(120);
-        }
-      }
-    }
-  }
-
   @media (min-width: 960px) {
     .scroll-down {
       display: block;
@@ -524,6 +512,18 @@ const parsedIntro = await marked(fields.intro);
       .sticky-column-2 {
         grid-column: 5 / span 4;
         margin-top: 0;
+      }
+    }
+  }
+
+  @media (min-height: 900px) {
+    .sticky-columns {
+      .intro {
+        padding-top: to-rem(144);
+
+        .intro-link {
+          margin-top: to-rem(120);
+        }
       }
     }
   }

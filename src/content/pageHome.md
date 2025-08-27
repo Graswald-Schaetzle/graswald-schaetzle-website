@@ -41,7 +41,7 @@ moduleStickyContent:
       - type: componentStickyColumnImage
         title: Naïs Graswald
         image:
-          image: ../images/duck-rubber-1.jpg
+          image: ../images/Naïs-Graswald-Portrait.webp
           alt: Naïs Graswald Portrait
       - type: componentStickyColumnContent
         title: Origin
@@ -87,7 +87,7 @@ moduleStickyContent:
       - type: componentStickyColumnImage
         title: Florian Schätzle
         image:
-          image: ../images/duck-rubber-1.jpg
+          image: ../images/Florian-Schaetzle-Portrait.webp
           alt: Florian Schätzle Portrait
       - type: componentStickyColumnContent
         title: Origin
@@ -142,8 +142,8 @@ moduleStickyContent:
         - type: componentStickyColumnImage
           title: Lorem Ipsum
           image:
-            image: ../images/duck-rubber-1.jpg
-            alt: lorem
+            image: ../images/Team.webp
+            alt: Team Portrait
         - type: componentStickyColumnContent
           title: Philosophy
           content: "We believe that real transformation doesn’t begin with a roadmap – it

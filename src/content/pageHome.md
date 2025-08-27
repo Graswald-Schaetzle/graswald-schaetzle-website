@@ -172,7 +172,8 @@ moduleStickyContent:
             - We work modularly – solo or together, with zero overhead.
             - We speak boardroom and backend.
 moduleTextLinksBlock:
-  - title: Forward
+  - anchor: contact
+    title: Forward
     content: Transformation becomes real when the right people start the right
       conversation. If our perspective aligns with your need, let’s talk.
       Whether you’re navigating complexity, building clarity or driving change –

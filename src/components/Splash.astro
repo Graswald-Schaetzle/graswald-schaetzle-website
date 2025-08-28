@@ -88,68 +88,71 @@
       Flip.fit(navWord2[1], word2, { props: 'color' });
       Flip.fit(navSymbol, symbolstate1, { props: 'color' });
 
-      gsap
-        .timeline({
-          defaults: { duration: 1, ease: 'power3.out' },
-          delay: 0.2,
-          onComplete: () => {
-            sessionStorage.setItem('splash:done', 'true');
-            scrollStart();
-          },
-        })
-        .set(navSymbol, { autoAlpha: 1 })
-        .fromTo(
-          navSymbol,
-          { clipPath: 'inset(100% 0% 0% 0%)' },
-          { clipPath: 'inset(0% 0% 0% 0%)' },
-        )
-        .to(navSymbolLine1, {
-          rotate: '90deg',
-          transformOrigin: 'center center',
-        })
-        .to(
-          navSymbolLine2,
-          { rotate: '180deg', transformOrigin: 'center center' },
-          '<',
-        )
-        .to(
-          [navSymbolLine1, navSymbolLine2],
-          { morphSVG: { shape: symbolLineMorph } },
-          '<',
-        )
-        .set([navSymbol1, navSymbol2], { autoAlpha: 1 })
-        .set([navSymbolLine1, navSymbolLine2], { autoAlpha: 0 })
-        .to(navSymbol1, {
-          morphSVG: {
-            shape: symbolMorphState11,
-            shapeIndex: 0,
-            type: 'linear',
-          },
-        })
-        .to(
-          navSymbol2,
-          {
+      const tl = gsap.timeline({
+        defaults: { duration: 1, ease: 'power3.out' },
+        delay: 0.2,
+        onComplete: () => {
+          sessionStorage.setItem('splash:done', 'true');
+          scrollStart();
+        },
+      });
+
+      if (window.innerWidth >= 560) {
+        tl.set(navSymbol, { autoAlpha: 1 })
+          .fromTo(
+            navSymbol,
+            { clipPath: 'inset(100% 0% 0% 0%)' },
+            { clipPath: 'inset(0% 0% 0% 0%)' },
+          )
+          .to(navSymbolLine1, {
+            rotate: '90deg',
+            transformOrigin: 'center center',
+          })
+          .to(
+            navSymbolLine2,
+            { rotate: '180deg', transformOrigin: 'center center' },
+            '<',
+          )
+          .to(
+            [navSymbolLine1, navSymbolLine2],
+            { morphSVG: { shape: symbolLineMorph } },
+            '<',
+          )
+          .set([navSymbol1, navSymbol2], { autoAlpha: 1 })
+          .set([navSymbolLine1, navSymbolLine2], { autoAlpha: 0 })
+          .to(navSymbol1, {
             morphSVG: {
-              shape: symbolMorphState12,
+              shape: symbolMorphState11,
               shapeIndex: 0,
               type: 'linear',
             },
-          },
-          '<',
-        )
-        .add(
-          Flip.fit(navSymbol, symbolstate2, {
-            duration: 1,
-            ease: 'power3.out',
-            props: 'color',
-          }) as gsap.core.Tween,
-        )
-        .fromTo(
-          [...navWord1],
-          { x: -20, autoAlpha: 0 },
-          { x: 0, autoAlpha: 1 },
-          '<0.1',
-        )
+          })
+          .to(
+            navSymbol2,
+            {
+              morphSVG: {
+                shape: symbolMorphState12,
+                shapeIndex: 0,
+                type: 'linear',
+              },
+            },
+            '<',
+          )
+          .add(
+            Flip.fit(navSymbol, symbolstate2, {
+              duration: 1,
+              ease: 'power3.out',
+              props: 'color',
+            }) as gsap.core.Tween,
+          );
+      }
+
+      tl.fromTo(
+        [...navWord1],
+        { x: -20, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1 },
+        '<0.1',
+      )
         .fromTo(
           [...navWord2],
           { x: -20, autoAlpha: 0 },

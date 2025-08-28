@@ -18,6 +18,15 @@
   const navSymbol = document.querySelector(
     '[data-js="splash-symbol"]',
   ) as HTMLElement;
+  const navSymbolLine1 = navSymbol?.querySelector(
+    '[data-js="symbol-line-1"]',
+  ) as SVGPathElement;
+  const navSymbolLine2 = navSymbol?.querySelector(
+    '[data-js="symbol-line-2"]',
+  ) as SVGPathElement;
+  const symbolLineMorph = navSymbol?.querySelector(
+    '[data-js="symbol-line-morph"]',
+  ) as SVGPathElement;
   const navSymbol1 = navSymbol?.querySelector(
     '[data-js="symbol-1"]',
   ) as SVGPathElement;
@@ -82,12 +91,34 @@
       gsap
         .timeline({
           defaults: { duration: 1, ease: 'power3.out' },
+          delay: 0.2,
           onComplete: () => {
             sessionStorage.setItem('splash:done', 'true');
             scrollStart();
           },
         })
-        .fromTo(navSymbol, { autoAlpha: 0 }, { autoAlpha: 1 })
+        .set(navSymbol, { autoAlpha: 1 })
+        .fromTo(
+          navSymbol,
+          { clipPath: 'inset(100% 0% 0% 0%)' },
+          { clipPath: 'inset(0% 0% 0% 0%)' },
+        )
+        .to(navSymbolLine1, {
+          rotate: '90deg',
+          transformOrigin: 'center center',
+        })
+        .to(
+          navSymbolLine2,
+          { rotate: '180deg', transformOrigin: 'center center' },
+          '<',
+        )
+        .to(
+          [navSymbolLine1, navSymbolLine2],
+          { morphSVG: { shape: symbolLineMorph } },
+          '<',
+        )
+        .set([navSymbol1, navSymbol2], { autoAlpha: 1 })
+        .set([navSymbolLine1, navSymbolLine2], { autoAlpha: 0 })
         .to(navSymbol1, {
           morphSVG: {
             shape: symbolMorphState11,

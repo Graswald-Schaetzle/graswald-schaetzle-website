@@ -164,9 +164,11 @@ const parsedIntro = await marked(fields.intro);
     border-radius: to-rem(24);
     overflow: clip;
 
-    &:hover {
-      .icons {
-        translate: 0 250%;
+    @include has-hover {
+      &:hover {
+        .icons {
+          translate: 0 250%;
+        }
       }
     }
 

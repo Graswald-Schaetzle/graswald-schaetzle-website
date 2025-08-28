@@ -42,9 +42,11 @@ const { fields } = Astro.props;
     padding-bottom: to-rem(8);
     border-bottom: 1px solid var(--c-dark-50);
 
-    &:hover {
-      .icons {
-        translate: 250% 0;
+    @include has-hover {
+      &:hover {
+        .icons {
+          translate: 250% 0;
+        }
       }
     }
 

@@ -308,15 +308,6 @@ const links = await getEntries(footer.links.map((link) => link.link));
   }
 
   @media (min-width: 560px) {
-    footer {
-      padding-top: to-rem(36);
-      padding-bottom: to-rem(24);
-    }
-
-    .title-mobile {
-      display: none;
-    }
-
     .navigation {
       --cols: 8;
 
@@ -366,31 +357,10 @@ const links = await getEntries(footer.links.map((link) => link.link));
     }
   }
 
-  @media (min-width: 1280px) {
-    .navigation {
-      --cols: 5;
-
-      grid-column: 8 / span var(--cols);
-    }
-
-    .content {
-      --cols: 4;
-
-      grid-column: 9 / span var(--cols);
-
-      .meta {
-        .contact {
-          width: calc((var(--col-width) * 2) + var(--grid-gutter));
-        }
-
-        .link {
-          width: var(--col-width);
-        }
-      }
-    }
-
-    .symbol {
-      grid-column: 1 / span 6;
+  @media (min-width: 960px) {
+    .menu-trigger,
+    .menu {
+      display: none;
     }
   }
 

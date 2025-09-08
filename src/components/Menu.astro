@@ -131,7 +131,7 @@ const links = await getEntries(footer.links.map((link) => link.link));
     position: fixed;
     left: 50%;
     bottom: to-rem(36);
-    z-index: 1;
+    z-index: calc(var(--zi-menu) - 1);
     width: to-rem(55);
   }
 

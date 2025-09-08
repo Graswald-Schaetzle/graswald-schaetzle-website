@@ -138,7 +138,6 @@ const links = await getEntries(footer.links.map((link) => link.link));
   .menu-close-trigger {
     grid-column: 1 / span 12;
     grid-row: 4;
-    margin-top: to-rem(36);
   }
 
   .menu {
@@ -174,7 +173,7 @@ const links = await getEntries(footer.links.map((link) => link.link));
     display: flex;
     gap: to-rem(38);
     align-items: center;
-    margin-bottom: to-rem(108);
+    margin-bottom: to-rem(24);
 
     .word-1 {
       width: to-rem(138);
@@ -201,7 +200,7 @@ const links = await getEntries(footer.links.map((link) => link.link));
 
     grid-column: 1 / span var(--cols);
     grid-row: 2;
-    margin-bottom: to-rem(160);
+    margin-bottom: to-rem(48);
 
     ol {
       width: 100%;
@@ -269,7 +268,7 @@ const links = await getEntries(footer.links.map((link) => link.link));
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      gap: to-rem(90) 0;
+      gap: to-rem(24) 0;
       align-items: flex-end;
 
       .contact {
@@ -303,6 +302,22 @@ const links = await getEntries(footer.links.map((link) => link.link));
       &:nth-child(2) {
         transform-origin: 75% 50%;
         animation-name: symbol2;
+      }
+    }
+  }
+
+  @media (min-height: 850px) {
+    .title {
+      margin-bottom: to-rem(108);
+    }
+
+    .navigation {
+      margin-bottom: to-rem(160);
+    }
+
+    .content {
+      .meta {
+        gap: to-rem(90) 0;
       }
     }
   }

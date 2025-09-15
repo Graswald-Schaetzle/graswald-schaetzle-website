@@ -6,11 +6,10 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: change to final domain
   site:
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4321'
-      : 'https://gsw-website.vercel.app',
+      : 'https://graswald-schaetzle.com',
   integrations: [
     robotsTxt({
       sitemapBaseFileName: 'sitemap-index',

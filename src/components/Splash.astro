@@ -53,6 +53,7 @@
             scrollStart();
           },
         })
+        .set([navSymbolLine1, navSymbolLine2], { autoAlpha: 0 })
         .to(splash, {
           autoAlpha: 0,
           duration: 0.5,
@@ -63,11 +64,33 @@
             autoAlpha: 1,
           },
           '<0.2',
+        )
+        .set(
+          navSymbol1,
+          {
+            morphSVG: {
+              shape: symbolMorphState11,
+              shapeIndex: 0,
+              type: 'linear',
+            },
+            autoAlpha: 1,
+          },
+          '<',
+        )
+        .set(
+          navSymbol2,
+          {
+            morphSVG: {
+              shape: symbolMorphState12,
+              shapeIndex: 0,
+              type: 'linear',
+            },
+            autoAlpha: 1,
+          },
+          '<',
         );
 
-    // if (!sessionStorage.getItem('splash:done')) {
-    // eslint-disable-next-line no-constant-condition
-    if (true) {
+    if (!sessionStorage.getItem('splash:done')) {
       const navWord1State1 = Flip.getState(navWord1[0], {
         props: 'color',
       });

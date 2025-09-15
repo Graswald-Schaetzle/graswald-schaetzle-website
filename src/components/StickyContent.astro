@@ -423,6 +423,7 @@ const parsedIntro = await marked(fields.intro);
 
     .navigation {
       display: block;
+      margin-bottom: to-rem(48);
     }
 
     .sticky-column {
@@ -447,6 +448,7 @@ const parsedIntro = await marked(fields.intro);
     .sticky-columns {
       grid-template-rows: calc(100vh - var(--height-header));
       grid-auto-rows: auto;
+      padding-bottom: calc(to-rem(208) + to-rem(40));
 
       .intro,
       .sticky-column-1,
@@ -481,7 +483,7 @@ const parsedIntro = await marked(fields.intro);
     }
 
     .sticky-section {
-      padding-top: to-rem(208);
+      padding-top: to-rem(144);
 
       .sticky-section-title {
         grid-column: 9 / span 4;

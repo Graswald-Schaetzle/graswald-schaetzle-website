@@ -363,3 +363,7 @@ components:
         label: Link Text
         type: string
         required: true
+
+
+settings:
+  hide: true

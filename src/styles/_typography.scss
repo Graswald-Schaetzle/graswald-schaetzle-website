@@ -58,7 +58,7 @@ h6,
 .richtext {
   > * {
     &:not(:last-child):not(br) {
-      margin-bottom: 1em;
+      margin-bottom: 1.2em;
     }
   }
 
@@ -76,5 +76,19 @@ h6,
   ul,
   ol {
     padding-left: 1em;
+  }
+
+  strong {
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-regular);
+  }
+
+  p {
+    strong {
+      display: inline-block;
+      font-size: 1.25em;
+      line-height: 1.2;
+      margin-bottom: 0.25em;
+    }
   }
 }

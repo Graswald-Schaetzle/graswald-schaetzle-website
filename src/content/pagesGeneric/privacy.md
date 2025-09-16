@@ -38,4 +38,32 @@ sections:
               
               Eine Weitergabe Ihrer Daten an Dritte erfolgt nur, soweit dies gesetzlich erlaubt ist oder Sie ausdrücklich eingewilligt haben.  
               Your data will only be shared with third parties if legally permitted or if you have expressly consented.
+
+              
+          4.  Rechte der Nutzer / User Rights
+              
+              Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit.  
+              You have the right to access, correct, delete, and restrict the processing of your personal data as well as the right to data portability.
+
+              
+          5.  Widerrufsrecht / Right of Withdrawal
+              
+              Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.  
+              You may revoke your consent at any time with effect for the future.
+
+              
+          6.   Einsatz von Cookies und Analysetools / Use of Cookies and
+          Analytics
+              
+              Unsere Website verwendet gegebenenfalls Cookies und Analyse-Tools (z. B. Google Analytics). Diese dienen zur Verbesserung der Nutzererfahrung. Sie können dem jederzeit widersprechen.  
+              Our website may use cookies and analytics tools (e.g. Google Analytics) to improve user experience. You can opt out at any time.
+
+              
+          7.  Kontakt zur Datenschutzaufsicht / Contact to Data Protection
+          Authority
+              
+              Beschwerden können Sie an die zuständige Aufsichtsbehörde richten:  
+              Bayerisches Landesamt für Datenschutzaufsicht (BayLDA).  
+              You may file complaints with the competent supervisory authority:  
+              Bavarian State Office for Data Protection Supervision (BayLDA).
 ---

@@ -96,6 +96,8 @@ const links = await getEntries(footer.links.map((link) => link.link));
 
 <style lang="scss">
   footer {
+    position: relative;
+    z-index: var(--zi-footer);
     padding-top: to-rem(90);
     padding-bottom: to-rem(36);
     color: var(--c-primary);

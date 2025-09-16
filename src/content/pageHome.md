@@ -12,7 +12,7 @@ moduleStickyContent:
 
 
     We support companies, organizations, and individuals in shaping
-    transformation in a way that is effective—strategically, humanly, and
+    transformation in a way that is effective - strategically, humanly and
     efficiently.
   introLink:
     link: /#contact
@@ -52,13 +52,13 @@ moduleStickyContent:
       - type: componentStickyColumnList
         title: Core Services
         text:
-          - C-Level Positioning & Thought Leadership
-          - Narrative Development for Future-Ready Organizations
-          - Transformation Communication – Internally and Externally
-          - Leadership Sparring for Strategic Clarity and Reinforcement
-          - Clarifying Leadership Stance & Aligning Team Culture
-          - Organizational Development for Human Potential – With Meaningful AI
-            Integration
+          - "C-Level & Board Advisory: Positioning & Reputation"
+          - "Executive & Enterprise Social Media:  Stakeholder-Oriented &
+            Substance-Driven"
+          - "Transformation Communication: Internal & External"
+          - "AI-Ready Communications & Newsroom: Structures & Upskilling"
+          - "Leadership Event Curation: Curated Spaces for Clarity, Connection &
+            Impact"
       - type: componentStickyColumnContent
         title: Impact
         content: >-
@@ -103,8 +103,6 @@ moduleStickyContent:
           - Prototyping & Implementation of Intelligent Digital Products
           - Technology Positioning & Stakeholder Alignment
           - Agile Leadership Support for Tech-Driven Transformation
-          - Translating Complexity Into Clarity – From Code to Culture
-          - Modular Tech Enablement That Scales With Real Organizational Needs
       - type: componentStickyColumnContent
         title: Impact
         content: The days of overpromised IT consulting with no real impact are over.
@@ -160,9 +158,7 @@ moduleStickyContent:
           text:
             - Clarity over complexity – we make things understandable and useful.
             - Courage with care – we challenge and stay.
-            - Less noise. More clarity.
             - Relevance over rules – we follow what fits, not fixed models.
-            - Trust through truth – direct, transparent, always grounded.
         - type: componentStickyColumnList
           title: Differentiator
           text:

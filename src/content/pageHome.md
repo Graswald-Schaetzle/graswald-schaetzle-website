@@ -41,7 +41,7 @@ moduleStickyContent:
       - type: componentStickyColumnImage
         title: Naïs Graswald
         image:
-          image: ../images/Nais-Graswald-Portrait.webp
+          image: ../images/Graswald_Schaetzle_Nais-Graswald.webp
           alt: Naïs Graswald Portrait
       - type: componentStickyColumnContent
         title: Origin
@@ -87,7 +87,7 @@ moduleStickyContent:
       - type: componentStickyColumnImage
         title: Florian Schätzle
         image:
-          image: ../images/Florian-Schaetzle-Portrait.webp
+          image: ../images/Graswald_Schaetzle_Florian-Schaetzle.webp
           alt: Florian Schätzle Portrait
       - type: componentStickyColumnContent
         title: Origin
@@ -140,7 +140,7 @@ moduleStickyContent:
         - type: componentStickyColumnImage
           title: Team
           image:
-            image: ../images/Team.webp
+            image: ../images/Graswald_Schaetzle_Graswald-Schaetzle.webp
             alt: Team Portrait
         - type: componentStickyColumnContent
           title: Philosophy

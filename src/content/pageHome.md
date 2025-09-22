@@ -53,7 +53,7 @@ moduleStickyContent:
         title: Core Services
         text:
           - "C-Level & Board Advisory: Positioning & Reputation"
-          - "Executive & Enterprise Social Media:  Stakeholder-Oriented &
+          - "Executive & Enterprise Social Media: Stakeholder-Oriented &
             Substance-Driven"
           - "Transformation Communication: Internal & External"
           - "AI-Ready Communications & Newsroom: Structures & Upskilling"
@@ -62,7 +62,7 @@ moduleStickyContent:
       - type: componentStickyColumnContent
         title: Impact
         content: >-
-          When working with Naïs Graswald, clarity emerges – in leadership, in
+          When working with Naïs Graswald, clarity emerges in leadership, in
           narrative, in direction.  
 
           Clients find the words to move forward. They gain alignment and
@@ -190,8 +190,8 @@ moduleTextLinksBlock:
           linkText: LinkedIn
   - title: Insight
     content: >-
-      If you're exploring new ways to think, lead, and communicate in an AI age
-      – this is for you.
+      If you're exploring new ways to think, lead and communicate in an AI age –
+      this is for you.
 
 
       Subscribe to our newsletter Deep Intelligence now. Thoughtfully curated.

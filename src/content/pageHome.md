@@ -175,7 +175,7 @@ moduleTextLinksBlock:
       Whether you’re navigating complexity, building clarity or driving change –
       we’re here to move with you.
     link:
-      link: "#"
+      link: "#https://calendar.app.google/9W9SR1UmeGRAj3G48"
       linkText: Book a call
     contacts:
       - title: Naïs Graswald

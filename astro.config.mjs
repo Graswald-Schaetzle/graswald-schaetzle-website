@@ -13,13 +13,12 @@ export default defineConfig({
   integrations: [
     robotsTxt({
       sitemapBaseFileName: 'sitemap-index',
-      // TODO: remove when going live
-      policy: [
-        {
-          userAgent: '*',
-          disallow: '/',
-        },
-      ],
+      // policy: [
+      //   {
+      //     userAgent: '*',
+      //     disallow: '/',
+      //   },
+      // ],
     }),
     sitemap({
       lastmod: new Date(),

@@ -107,9 +107,9 @@ moduleStickyContent:
         title: Impact
         content: The days of overpromised IT consulting with no real impact are over.
           Florian brings structure to chaos and momentum to ideas. He helps
-          organizations move from ambition to execution – with technology that
+          organizations move from ambition to execution with technology that
           fits, adapts and stays. Because the real value of innovation lies not
-          in what it promises, but in what it sustainably delivers – for today,
+          in what it promises, but in what it sustainably delivers – for today
           and for what comes after.
   stickySection:
     content:
@@ -127,7 +127,7 @@ moduleStickyContent:
 
         We believe transformation only works when it connects technology with
         narrative, direction with dialogue, and ambition with execution. Not
-        driven by hype – but by clarity, relevance and the will to act. We don’t
+        driven by hype, but by clarity, relevance and the will to act. We don’t
         just advise. We co-create. We implement. We stay until it works.
 
 
@@ -150,21 +150,21 @@ moduleStickyContent:
             intersection of communication, technology and leadership – not as
             disciplines to manage, but as forces to align. We don’t separate
             structure from story, or people from process. We create clarity
-            where others create layers – and movement where others hesitate.
+            where others create layers and movement where others hesitate.
             Because we’re convinced: the future shaped by AI will only serve us
-            if we shape it consciously – with depth, courage, and human intent."
+            if we shape it consciously with depth, courage and human intent."
         - type: componentStickyColumnList
           title: Values
           text:
-            - Clarity over complexity – we make things understandable and useful.
-            - Courage with care – we challenge and stay.
-            - Relevance over rules – we follow what fits, not fixed models.
+            - Clarity over complexity. We make things understandable and useful.
+            - Courage with care. We challenge and stay.
+            - Relevance over rules. We follow what fits, not fixed models.
         - type: componentStickyColumnList
           title: Differentiator
           text:
             - We bring a unique understanding of technology, communication and
               leadership.
-            - We implement, not just advise – from prototype to process.
+            - We implement, not just advise from prototype to process.
             - We work modularly – solo or together, with zero overhead.
             - We speak boardroom and backend.
 moduleTextLinksBlock:

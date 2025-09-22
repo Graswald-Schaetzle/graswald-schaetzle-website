@@ -181,12 +181,12 @@ moduleTextLinksBlock:
       - title: Naïs Graswald
         mail: nais@graswald-schaetzle.com
         link:
-          link: "#https://www.linkedin.com/in/naisgraswald/"
+          link: https://www.linkedin.com/in/naisgraswald/
           linkText: LinkedIn
       - title: Florian Schätzle
         mail: florian@graswald-schaetzle.com
         link:
-          link: "#https://www.linkedin.com/in/florianschaetzle/"
+          link: https://www.linkedin.com/in/florianschaetzle/
           linkText: LinkedIn
   - title: Insight
     content: >-

@@ -144,7 +144,7 @@ moduleStickyContent:
             alt: Team Portrait
         - type: componentStickyColumnContent
           title: Philosophy
-          content: "We believe that real transformation doesn’t begin with a roadmap – it
+          content: "We believe that real transformation doesn’t begin with a roadmap, it
             begins with responsibility. Responsibility for language, for
             systems, for the culture in which decisions are made. We work at the
             intersection of communication, technology and leadership – not as

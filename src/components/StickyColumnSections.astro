@@ -37,7 +37,12 @@ const ListTag = unorderedList ? 'ul' : 'ol';
   fields.type === 'componentStickyColumnImage' && (
     <Fragment>
       <h3 class="title h5">{fields.title}</h3>
-      <Image src={fields.image.image} alt={fields.image.alt} class="image" />
+      <Image
+        src={fields.image.image}
+        alt={fields.image.alt}
+        layout="constrained"
+        class="image"
+      />
     </Fragment>
   )
 }

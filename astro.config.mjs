@@ -37,6 +37,9 @@ export default defineConfig({
     },
     plugins: [],
   },
+  image: {
+    responsiveStyles: true,
+  },
 });
 
 // file meta order

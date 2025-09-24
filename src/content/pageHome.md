@@ -8,7 +8,7 @@ moduleStickyContent:
 
 
     We shape communication, technology and leadership to be future-ready for the
-    age of AI – for organizations ready to lead change, not just manage it.
+    age of AI for organizations ready to lead change, not just manage it.
 
 
     We support companies, organizations and individuals in shaping
@@ -83,7 +83,7 @@ moduleStickyContent:
           always one step ahead. He designs and implements AI strategies that
           are understandable, usable and aligned with organizational goals. He
           translates complexity into clarity, builds prototypes that go beyond
-          concepts, and enables teams to own solutions that are built to last.
+          concepts and enables teams to own solutions that are built to last.
       - type: componentStickyColumnImage
         title: Florian Schätzle
         image:
@@ -122,7 +122,7 @@ moduleStickyContent:
 
         At Graswald/Schätzle, we combine communication, Tech strategy and
         leadership insight to help you move complex change forward – clearly,
-        credibly, and with lasting effect.
+        credibly and with lasting effect.
 
 
         We believe transformation only works when it connects technology with

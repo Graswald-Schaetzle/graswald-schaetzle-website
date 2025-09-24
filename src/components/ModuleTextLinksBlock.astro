@@ -23,9 +23,13 @@ const parsedContent = await marked(fields.content);
       <h3 class="title h5">{fields.title}</h3>
       <div class="richtext h2" set:html={parsedContent} />
     </div>
-    <div class="cta">
-      <LinkWithArrow fields={fields.link} />
-    </div>
+    {
+      fields.link.link !== '#' && (
+        <div class="cta">
+          <LinkWithArrow fields={fields.link} />
+        </div>
+      )
+    }
     {
       fields.contacts && (
         <ul class="contacts">

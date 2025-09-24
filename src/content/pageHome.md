@@ -197,6 +197,6 @@ moduleTextLinksBlock:
       Subscribe to our newsletter Deep Intelligence now. Thoughtfully curated.
       No noise. Just depth.
     link:
-      link: "#"
+      link: "#https://naisgraswald.myflodesk.com/deepintelligence"
       linkText: Join the list
 ---

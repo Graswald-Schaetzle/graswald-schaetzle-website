@@ -47,7 +47,7 @@ moduleStickyContent:
           image: ../images/Graswald_Schaetzle_Nais-Graswald.webp
           alt: Naïs Graswald Portrait
       - type: componentStickyColumnContent
-        title: Herkunft
+        title: Hintergrund
         content: Wir verwandeln Mehrdeutigkeiten in Übereinstimmung. Narrative, die
           Orientierung geben. Botschaften, die ankommen. Und eine gemeinsame
           Sprache, die Menschen voranbringt. Klarheit statt Schlagworte.
@@ -64,7 +64,7 @@ moduleStickyContent:
           - "Kuratierung von Führungsveranstaltungen: Kuratierte Räume für
             Klarheit, Verbindung und Wirkung"
       - type: componentStickyColumnContent
-        title: Auswirkungen
+        title: Impact
         content: >-
           In der Zusammenarbeit mit Naïs Graswald entsteht Klarheit in Führung,
           Narrativ und Richtung.  
@@ -95,7 +95,7 @@ moduleStickyContent:
           image: ../images/Graswald_Schaetzle_Florian-Schaetzle.webp
           alt: Florian Schätzle Portrait
       - type: componentStickyColumnContent
-        title: Herkunft
+        title: Hintergrund
         content: Mit seinem Hintergrund in KI, digitaler Produktentwicklung und
           Systemdenken hat Florian branchenübergreifend und
           unternehmensübergreifend gearbeitet – von jungen Unternehmen bis hin
@@ -110,7 +110,7 @@ moduleStickyContent:
           - Technologiepositionierung und Stakeholder-Ausrichtung
           - Agile Führungsunterstützung für technologiegetriebene Transformation
       - type: componentStickyColumnContent
-        title: Auswirkungen
+        title: Impact
         content: Die Zeiten überzogener IT-Beratung ohne wirkliche Wirkung sind vorbei.
           Florian bringt Struktur ins Chaos und Schwung in Ideen. Er unterstützt
           Unternehmen dabei, ihre Ambitionen in die Tat umzusetzen – mit

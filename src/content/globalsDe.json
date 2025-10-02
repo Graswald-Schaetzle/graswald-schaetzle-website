@@ -1,0 +1,46 @@
+{
+  "general": [
+    {
+      "siteTitle": "Graswald/Schaetzle",
+      "siteDescription": "Graswald/Schaetzle ist eine Boutique-Beratung für eine Welt im Wandel.",
+      "siteImage": "../images/og-share-image.jpg"
+    }
+  ],
+  "navigation": [
+    {
+      "links": [
+        {
+          "title": "Intro",
+          "anchor": "intro"
+        },
+        {
+          "title": "Kommunikation",
+          "anchor": "kommunikation"
+        },
+        {
+          "title": "Technologie",
+          "anchor": "technologie"
+        },
+        {
+          "title": "Transformation",
+          "anchor": "transformation"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "contact": "Graswald & Schaetzle GmbH\nSüdliche Münchner Str. 42A\n82031 Grünwald",
+      "links": [
+        {}
+      ]
+    }
+  ],
+  "page404": [
+    {
+      "title": "404",
+      "subline": "Seite nicht gefunden",
+      "linkText": "Zurück zur Startseite"
+    }
+  ]
+}

@@ -177,7 +177,7 @@ moduleStickyContent:
           text:
             - Wir bringen ein einzigartiges Verständnis von Technologie,
               Kommunikation und Führung mit.
-            - Wir setzen um, nicht nur beraten wir vom Prototyp bis zum Prozess.
+            - Wir setzen um und beraten nicht nur vom Prototyp bis zum Prozess.
             - Wir arbeiten modular – allein oder gemeinsam, ohne Overhead.
             - Wir sprechen Vorstandszimmer und Backend.
 moduleTextLinksBlock:
@@ -189,7 +189,7 @@ moduleTextLinksBlock:
       schaffen oder Veränderungen vorantreiben – wir begleiten Sie.
     link:
       link: https://calendar.app.google/9W9SR1UmeGRAj3G48
-      linkText: Buchen Sie einen Anruf
+      linkText: Anruf buchen
     contacts:
       - title: Naïs Graswald
         mail: nais@graswald-schaetzle.com
@@ -201,7 +201,7 @@ moduleTextLinksBlock:
         link:
           link: https://www.linkedin.com/in/florianschaetzle/
           linkText: LinkedIn
-  - title: Einblick
+  - title: Einblicke
     content: >-
       Wenn Sie im KI-Zeitalter neue Denk-, Führungs- und Kommunikationswege
       erkunden möchten, ist dieser Newsletter genau das Richtige für Sie.
@@ -211,5 +211,5 @@ moduleTextLinksBlock:
       kuratiert. Kein Lärm. Nur Tiefe.
     link:
       link: https://naisgraswald.myflodesk.com/deepintelligence
-      linkText: Treten Sie der Liste bei
+      linkText: Newsletter abonnieren
 ---

@@ -32,7 +32,12 @@
     {
       "contact": "Graswald & Schaetzle GmbH\nSüdliche Münchner Str. 42A\n82031 Grünwald",
       "links": [
-        {}
+        {
+          "link": "impressum"
+        },
+        {
+          "link": "datenschutz"
+        }
       ]
     }
   ],

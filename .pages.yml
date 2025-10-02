@@ -116,6 +116,116 @@ content:
             type: string
             required: true
 
+  - name: globalsDe
+    label: Global Settings DE
+    type: file
+    path: src/content/globalsDe.json
+    format: json
+    fields:
+      - name: general
+        label: General
+        type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: General
+        fields:
+          - name: siteTitle
+            label: Site Title
+            type: string
+            required: true
+          - name: siteDescription
+            label: Site Description
+            type: string
+            required: true
+          - name: siteImage
+            label: Site Image (1200x630)
+            type: image
+            required: true
+
+      - name: navigation
+        label: Navigation
+        type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: Navigation
+        fields:
+          - name: links
+            label: Links
+            type: object
+            list:
+              min: 1
+              max: 4
+              collapsible:
+                summary: Link
+            fields:
+              - name: title
+                label: Title
+                type: string
+                required: true
+              - name: anchor
+                label: Anchor
+                description: lowercase, hyphenated, e.g. this-section
+                type: string
+                required: true
+
+      - name: footer
+        label: Footer
+        type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: Footer
+        fields:
+          - name: contact
+            label: Contact
+            type: text
+            required: true
+          - name: links
+            label: Internal Links
+            type: object
+            list:
+              min: 1
+              max: 2
+              collapsible:
+                summary: Link
+            fields:
+              - name: link
+                label: Link
+                type: reference
+                required: true
+                options:
+                  collection: genericDe
+                  search: 'name,fields.slug,fields.title'
+                  value: '{slug}'
+                  label: '{title} (/{slug})'
+
+      - name: page404
+        label: 404 Page
+        type: object
+        list:
+          min: 1
+          max: 1
+          collapsible:
+            summary: 404 Page
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: subline
+            label: Subline
+            type: string
+            required: true
+          - name: linkText
+            label: Back Home Link Text
+            type: string
+            required: true
+
   - name: home
     label: Home Page
     type: file
@@ -140,10 +250,73 @@ content:
           collapsible:
             summary: Text & Links Block
 
+  - name: homeDe
+    label: Home Page DE
+    type: file
+    path: src/content/pageHomeDe.md
+    fields:
+      - name: title
+        label: Title (Meta)
+        type: string
+        required: false
+      - name: h1
+        label: H1 (hidden, but for SEO)
+        type: string
+        required: true
+      - name: moduleStickyContent
+        label: Sticky Content
+        component: moduleStickyContent
+      - name: moduleTextLinksBlock
+        label: Text & Links Blocks
+        component: moduleTextLinksBlock
+        list:
+          min: 1
+          collapsible:
+            summary: Text & Links Block
+
   - name: generic
     label: Generic Pages
     type: collection
     path: src/content/pagesGeneric
+    filename: '{primary}.md'
+    view:
+      fields: [ slug, title ]
+    fields:
+      - name: slug
+        label: Slug (Meta)
+        type: string
+        required: true
+      - name: title
+        label: Title (Meta)
+        type: string
+        required: true
+      - name: sections
+        label: Page Sections
+        type: object
+        list:
+          min: 1
+          collapsible:
+            summary: Section
+        fields:
+          - name: modules
+            label: Modules
+            type: block
+            blockKey: type
+            list:
+              min: 1
+              collapsible:
+                summary: 'Module {index}'
+            blocks:
+              - name: moduleTitle
+                label: Title (Heading 1)
+                component: moduleTitle
+              - name: moduleRichText
+                label: Rich-Text
+
+  - name: genericDe
+    label: Generic Pages DE
+    type: collection
+    path: src/content/pagesGenericDe
     filename: '{primary}.md'
     view:
       fields: [ slug, title ]

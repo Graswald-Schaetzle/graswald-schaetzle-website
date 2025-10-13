@@ -312,6 +312,7 @@ content:
                 component: moduleTitle
               - name: moduleRichText
                 label: Rich-Text
+                component: moduleRichText
 
   - name: genericDe
     label: Generic Pages DE

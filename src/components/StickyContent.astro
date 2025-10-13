@@ -10,14 +10,22 @@ interface Props {
 
 import { marked } from 'marked';
 
-import { navigation } from '@content/globals';
+import { navigation, navigationDe } from '@content/globals';
 
 import LinkWithArrow from '@components/LinkWithArrow.astro';
 import StickyColumnSections from '@components/StickyColumnSections.astro';
 
+import { useTranslations } from '../i18n/utils';
+
 const { fields } = Astro.props;
 
+const locale = Astro.currentLocale;
+
+const navigationData = locale === 'de' ? navigationDe : navigation;
+
 const parsedIntro = await marked(fields.intro);
+
+const t = useTranslations((locale as 'de' | 'en') || 'en');
 ---
 
 <script>
@@ -33,7 +41,11 @@ const parsedIntro = await marked(fields.intro);
 
 <div id={fields.anchor} class="container sticky-content">
   <div class="grid">
-    <button class="scroll-down" data-js="scroll-down" aria-label="scroll down">
+    <button
+      class="scroll-down"
+      data-js="scroll-down"
+      aria-label={t('scroll.down')}
+    >
       <span class="icons">
         <svg
           class="icon icon-first"
@@ -57,13 +69,13 @@ const parsedIntro = await marked(fields.intro);
         </svg>
       </span>
     </button>
-    <nav class="navigation" data-js="nav" aria-label="primary navigation">
+    <nav class="navigation" data-js="nav" aria-label={t('nav.primary')}>
       <ol>
         {
-          navigation.links.map((link, i) => (
+          navigationData.links.map((link, i) => (
             <li>
               <a
-                href={`/#${link.anchor}`}
+                href={`/${locale && locale !== 'en' ? locale : ''}#${link.anchor}`}
                 class={`h3 ${i === 0 ? 'is-active' : ''}`}
               >
                 {link.title}

@@ -1,16 +1,28 @@
 ---
 import { getEntries } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
-import { navigation, footer } from '@content/globals';
+import { navigation, navigationDe, footer, footerDe } from '@content/globals';
 
-const links = await getEntries(footer.links.map((link) => link.link));
+import { useTranslations } from '../i18n/utils';
+
+const locale = Astro.currentLocale;
+
+const navigationData = locale === 'de' ? navigationDe : navigation;
+const footerData = locale === 'de' ? footerDe : footer;
+
+const links = await getEntries(footerData.links.map((link) => link.link));
+
+const t = useTranslations((locale as 'de' | 'en') || 'en');
 ---
 
 <footer>
   <div class="container">
     <div class="grid">
       <a
-        href="/#"
+        href={Astro.url.pathname === '/' || Astro.url.pathname === '/de'
+          ? Astro.url.pathname + '#'
+          : getRelativeLocaleUrl(locale || 'en', '/')}
         class="title-mobile link-animated"
         aria-label="Home Graswald & Schaetzle"
       >
@@ -40,12 +52,15 @@ const links = await getEntries(footer.links.map((link) => link.link));
           </svg>
         </span>
       </a>
-      <nav class="navigation" aria-label="primary navigation placed in footer">
+      <nav class="navigation" aria-label={t('footer.nav')}>
         <ol>
           {
-            navigation.links.map((link) => (
+            navigationData.links.map((link) => (
               <li>
-                <a href={`/#${link.anchor}`} class="h1">
+                <a
+                  href={`/${locale && locale !== 'en' ? locale : ''}#${link.anchor}`}
+                  class="h1"
+                >
                   {link.title}
                 </a>
               </li>
@@ -55,7 +70,9 @@ const links = await getEntries(footer.links.map((link) => link.link));
       </nav>
       <div class="content">
         <a
-          href="/#"
+          href={Astro.url.pathname === '/' || Astro.url.pathname === '/de'
+            ? Astro.url.pathname + '#'
+            : getRelativeLocaleUrl(locale || 'en', '/')}
           class="title link-animated"
           aria-label="Home Graswald & Schaetzle"
         >
@@ -67,12 +84,15 @@ const links = await getEntries(footer.links.map((link) => link.link));
         </a>
         <div class="meta">
           <p class="contact h6">
-            {footer.contact}
+            {footerData.contact}
           </p>
           {
             links.map((link) => (
               <span class="link">
-                <a href={link.data.slug} class="h6 link-animated">
+                <a
+                  href={getRelativeLocaleUrl(locale || 'en', link.data.slug)}
+                  class="h6 link-animated"
+                >
                   {link.data.title}
                 </a>
               </span>
@@ -80,7 +100,13 @@ const links = await getEntries(footer.links.map((link) => link.link));
           }
         </div>
       </div>
-      <a href="/#" class="symbol" aria-label="Home Graswald & Schaetzle">
+      <a
+        href={Astro.url.pathname === '/' || Astro.url.pathname === '/de'
+          ? Astro.url.pathname + '#'
+          : getRelativeLocaleUrl(locale || 'en', '/')}
+        class="symbol"
+        aria-label="Home Graswald & Schaetzle"
+      >
         <svg viewBox="0 0 38 24" fill="none" aria-hidden="true">
           <path
             d="M12 24C9.15759 24 6.84241 21.6848 6.84241 18.8424C6.84241 17.914 6.08596 17.1576 5.15759 17.1576C2.31519 17.1576 0 14.8424 0 12C0 9.15759 2.31519 6.84241 5.15759 6.84241C6.08596 6.84241 6.84241 6.08596 6.84241 5.15759C6.84241 2.31519 9.15759 0 12 0C14.8424 0 17.1576 2.31519 17.1576 5.15759C17.1576 8 14.8424 10.3152 12 10.3152C11.0716 10.3152 10.3152 11.0716 10.3152 12C10.3152 12.9284 11.0716 13.6848 12 13.6848C14.8424 13.6848 17.1576 16 17.1576 18.8424C17.1576 21.6848 14.8424 24 12 24Z"

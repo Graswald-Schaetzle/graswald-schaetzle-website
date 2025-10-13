@@ -9,6 +9,7 @@
   const splashBg: HTMLElement | null = document.querySelector(
     '[data-js="splash-bg"]',
   );
+  const headerLang = document.querySelector('[data-js="header-lang"]');
   const word1 = document.querySelector('[data-js="word-1"]');
   const word2 = document.querySelector('[data-js="word-2"]');
   const navWord1 = document.querySelectorAll('[data-js="splash-word-1"]');
@@ -59,7 +60,7 @@
           duration: 0.5,
         })
         .to(
-          [...navWord1, ...navWord2, navSymbol],
+          [...navWord1, ...navWord2, navSymbol, headerLang],
           {
             autoAlpha: 1,
           },
@@ -221,6 +222,7 @@
           }) as gsap.core.Tween,
           '<',
         )
+        .to(headerLang, { autoAlpha: 1 }, '<0.1')
         .to(splashBg, { autoAlpha: 0 }, '<0.1');
     } else {
       simpleSplash();

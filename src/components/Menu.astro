@@ -1,9 +1,21 @@
 ---
 import { getEntries } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
-import { navigation, footer } from '@content/globals';
+import { navigation, navigationDe, footer, footerDe } from '@content/globals';
 
-const links = await getEntries(footer.links.map((link) => link.link));
+import LanguagePicker from '@components/LanguagePicker.astro';
+
+import { useTranslations } from '../i18n/utils';
+
+const locale = Astro.currentLocale;
+
+const navigationData = locale === 'de' ? navigationDe : navigation;
+const footerData = locale === 'de' ? footerDe : footer;
+
+const links = await getEntries(footerData.links.map((link) => link.link));
+
+const t = useTranslations((locale as 'de' | 'en') || 'en');
 ---
 
 <script>
@@ -40,7 +52,7 @@ const links = await getEntries(footer.links.map((link) => link.link));
   <div class="container">
     <div class="grid">
       <a
-        href="/"
+        href={getRelativeLocaleUrl(locale || 'en', '/')}
         class="title link-animated"
         aria-label="Home Graswald & Schaetzle"
       >
@@ -70,12 +82,16 @@ const links = await getEntries(footer.links.map((link) => link.link));
           </svg>
         </span>
       </a>
-      <nav class="navigation" aria-label="primary navigation in menu">
+      <nav class="navigation" aria-label={t('menu.nav')}>
         <ol>
           {
-            navigation.links.map((link) => (
+            navigationData.links.map((link) => (
               <li>
-                <a href={`/#${link.anchor}`} class="h1" data-js="nav-link">
+                <a
+                  href={`/${locale && locale !== 'en' ? locale : ''}#${link.anchor}`}
+                  class="h1"
+                  data-js="nav-link"
+                >
                   {link.title}
                 </a>
               </li>
@@ -86,12 +102,15 @@ const links = await getEntries(footer.links.map((link) => link.link));
       <div class="content">
         <div class="meta">
           <p class="contact h6">
-            {footer.contact}
+            {footerData.contact}
           </p>
           {
             links.map((link) => (
               <span class="link">
-                <a href={link.data.slug} class="h6 link-animated">
+                <a
+                  href={getRelativeLocaleUrl(locale || 'en', link.data.slug)}
+                  class="h6 link-animated"
+                >
                   {link.data.title}
                 </a>
               </span>
@@ -99,7 +118,11 @@ const links = await getEntries(footer.links.map((link) => link.link));
           }
         </div>
       </div>
-      <a href="/" class="symbol" aria-label="Home Graswald & Schaetzle">
+      <a
+        href={getRelativeLocaleUrl(locale || 'en', '/')}
+        class="symbol"
+        aria-label="Home Graswald & Schaetzle"
+      >
         <svg viewBox="0 0 38 24" fill="none" aria-hidden="true">
           <path
             d="M12 24C9.15759 24 6.84241 21.6848 6.84241 18.8424C6.84241 17.914 6.08596 17.1576 5.15759 17.1576C2.31519 17.1576 0 14.8424 0 12C0 9.15759 2.31519 6.84241 5.15759 6.84241C6.08596 6.84241 6.84241 6.08596 6.84241 5.15759C6.84241 2.31519 9.15759 0 12 0C14.8424 0 17.1576 2.31519 17.1576 5.15759C17.1576 8 14.8424 10.3152 12 10.3152C11.0716 10.3152 10.3152 11.0716 10.3152 12C10.3152 12.9284 11.0716 13.6848 12 13.6848C14.8424 13.6848 17.1576 16 17.1576 18.8424C17.1576 21.6848 14.8424 24 12 24Z"
@@ -109,13 +132,22 @@ const links = await getEntries(footer.links.map((link) => link.link));
             fill="currentColor"></path>
         </svg>
       </a>
-      <button class="menu-close-trigger" data-js="menu-close-trigger"
-        >Close</button
-      >
+      <div class="bottom">
+        <div class="lang">
+          <LanguagePicker />
+        </div>
+        <button class="menu-close-trigger" data-js="menu-close-trigger">
+          {t('menu.close')}
+        </button>
+      </div>
     </div>
   </div>
 </div>
-<button class="menu-trigger" data-js="menu-open-trigger" aria-label="Open Menu">
+<button
+  class="menu-trigger"
+  data-js="menu-open-trigger"
+  aria-label={t('menu.open')}
+>
   <svg viewBox="0 0 38 24" fill="none" aria-hidden="true">
     <path
       d="M12 24C9.15759 24 6.84241 21.6848 6.84241 18.8424C6.84241 17.914 6.08596 17.1576 5.15759 17.1576C2.31519 17.1576 0 14.8424 0 12C0 9.15759 2.31519 6.84241 5.15759 6.84241C6.08596 6.84241 6.84241 6.08596 6.84241 5.15759C6.84241 2.31519 9.15759 0 12 0C14.8424 0 17.1576 2.31519 17.1576 5.15759C17.1576 8 14.8424 10.3152 12 10.3152C11.0716 10.3152 10.3152 11.0716 10.3152 12C10.3152 12.9284 11.0716 13.6848 12 13.6848C14.8424 13.6848 17.1576 16 17.1576 18.8424C17.1576 21.6848 14.8424 24 12 24Z"
@@ -133,11 +165,6 @@ const links = await getEntries(footer.links.map((link) => link.link));
     bottom: to-rem(36);
     z-index: 500;
     width: to-rem(55);
-  }
-
-  .menu-close-trigger {
-    grid-column: 1 / span 12;
-    grid-row: 4;
   }
 
   .menu {
@@ -304,6 +331,15 @@ const links = await getEntries(footer.links.map((link) => link.link));
         animation-name: symbol2;
       }
     }
+  }
+
+  .bottom {
+    grid-column: 1 / span 12;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
 
   @media (min-height: 850px) {

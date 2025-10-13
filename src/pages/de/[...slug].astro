@@ -5,7 +5,7 @@ import Layout from '@layouts/Layout.astro';
 import PageGeneric from '@components/PageGeneric.astro';
 
 export async function getStaticPaths() {
-  const pages = await getCollection('pagesGeneric');
+  const pages = await getCollection('pagesGenericDe');
   return pages.map((page) => ({
     params: { slug: page.id },
     props: { page },

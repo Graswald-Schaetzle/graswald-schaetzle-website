@@ -1,7 +1,19 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import LanguagePicker from '@components/LanguagePicker.astro';
+
+const locale = Astro.currentLocale;
+---
+
 <header>
   <div class="container">
     <div class="grid">
-      <a href="/" class="title" aria-label="Home Graswald & Schaetzle">
+      <a
+        href={getRelativeLocaleUrl(locale || 'en', '/')}
+        class="title"
+        aria-label="Home Graswald & Schaetzle"
+      >
         <span class="word word-1" data-js="splash-word-1">
           <svg viewBox="0 0 200 39" fill="none" aria-hidden="true">
             <path
@@ -56,7 +68,11 @@
           </svg>
         </span>
       </a>
-      <a href="/" class="symbol" aria-label="Home Graswald & Schaetzle">
+      <a
+        href={getRelativeLocaleUrl(locale || 'en', '/')}
+        class="symbol"
+        aria-label="Home Graswald & Schaetzle"
+      >
         <svg
           viewBox="0 0 38 24"
           fill="none"
@@ -95,6 +111,9 @@
             fill="transparent"></path>
         </svg>
       </a>
+      <div class="lang" data-js="header-lang">
+        <LanguagePicker />
+      </div>
     </div>
   </div>
 </header>
@@ -173,7 +192,7 @@
 
   .symbol {
     display: none;
-    grid-column-start: 9;
+    grid-column: 9 / 12;
     width: to-rem(38);
     overflow: visible;
 
@@ -194,6 +213,13 @@
         transform-origin: 75% 50%;
       }
     }
+  }
+
+  .lang {
+    display: none;
+    grid-column: 12 / 12;
+    text-align: right;
+    opacity: 0;
   }
 
   @include has-hover {
@@ -225,6 +251,10 @@
     }
 
     .symbol {
+      display: block;
+    }
+
+    .lang {
       display: block;
     }
   }

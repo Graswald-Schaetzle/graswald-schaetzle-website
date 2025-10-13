@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type PageHome = CollectionEntry<'pageHome'> | CollectionEntry<'pageHomeDe'>;
+
+interface Props {
+  page: PageHome;
+}
+
+import StickyContent from '@components/StickyContent.astro';
+import ModuleTextLinksBlock from '@components/ModuleTextLinksBlock.astro';
+
+const { page } = Astro.props;
+---
+
+<main>
+  <section class="visually-hidden">
+    <h1>{page.data.h1}</h1>
+  </section>
+  <section>
+    <StickyContent fields={page.data.moduleStickyContent} />
+  </section>
+  {
+    page.data.moduleTextLinksBlock.map((section) => (
+      <section>
+        <ModuleTextLinksBlock fields={section} />
+      </section>
+    ))
+  }
+</main>

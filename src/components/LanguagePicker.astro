@@ -1,0 +1,18 @@
+---
+import { ui, defaultLang } from '../i18n/ui';
+
+const locale = Astro.currentLocale;
+---
+
+<div class="language-picker">
+  {
+    Object.keys(ui).map(
+      (lang) =>
+        lang !== locale && (
+          <a href={lang === defaultLang ? '/' : `/${lang}`}>
+            {lang.toLocaleUpperCase()}
+          </a>
+        ),
+    )
+  }
+</div>

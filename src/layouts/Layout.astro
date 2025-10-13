@@ -1,7 +1,7 @@
 ---
 import '../styles/index.scss';
 
-import { general } from '@content/globals';
+import { general, generalDe } from '@content/globals';
 
 import Header from '@components/Header.astro';
 import Menu from '@components/Menu.astro';
@@ -10,11 +10,15 @@ import Splash from '@components/Splash.astro';
 
 const { pageTitle } = Astro.props;
 
+const locale = Astro.currentLocale;
+
+const generalData = locale === 'de' ? generalDe : general;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const title = `${pageTitle ? pageTitle + ' | ' : ''}${general.siteTitle}`;
-const description = general.siteDescription;
-const shareImage = new URL(general.siteImage.src, Astro.url);
+const title = `${pageTitle ? pageTitle + ' | ' : ''}${generalData.siteTitle}`;
+const description = generalData.siteDescription;
+const shareImage = new URL(generalData.siteImage.src, Astro.url);
 ---
 
 <script>
@@ -23,7 +27,7 @@ const shareImage = new URL(general.siteImage.src, Astro.url);
   scrollStop();
 </script>
 
-<html lang="en">
+<html lang={locale || 'en'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,7 +53,7 @@ const shareImage = new URL(general.siteImage.src, Astro.url);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={shareImage} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en" />
+    <meta property="og:locale" content={locale} />
     <meta property="og:url" content={canonicalURL} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

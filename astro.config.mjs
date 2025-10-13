@@ -23,6 +23,13 @@ export default defineConfig({
     sitemap({
       lastmod: new Date(),
       xslURL: '/sitemap.xsl',
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          de: 'de',
+        },
+      },
     }),
   ],
   vite: {
@@ -39,6 +46,11 @@ export default defineConfig({
   image: {
     responsiveStyles: true,
   },
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
+  },
+  trailingSlash: 'never',
 });
 
 // file meta order

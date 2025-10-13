@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type PageGeneric =
+  | CollectionEntry<'pagesGeneric'>
+  | CollectionEntry<'pagesGenericDe'>;
+
+interface Props {
+  page: PageGeneric;
+}
+
+import ModuleTitle from '@components/ModuleTitle.astro';
+import ModuleRichText from '@components/ModuleRichText.astro';
+
+const { page } = Astro.props;
+---
+
+<main>
+  {
+    page.data.sections.map((section) => (
+      <section class="section">
+        {section.modules.map((module) => {
+          switch (module.type) {
+            case 'moduleTitle':
+              return <ModuleTitle fields={module} />;
+            case 'moduleRichText':
+              return <ModuleRichText fields={module} />;
+            default:
+              return null;
+          }
+        })}
+      </section>
+    ))
+  }
+</main>

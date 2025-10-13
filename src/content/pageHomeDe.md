@@ -16,7 +16,7 @@ moduleStickyContent:
     Transformation effektiv zu gestalten – strategisch, menschlich und
     effizient.
   introLink:
-    link: /#kontakt
+    link: "#kontakt"
     linkText: Jetzt kontaktieren
   stickyColumn1:
     anchor: kommunikation

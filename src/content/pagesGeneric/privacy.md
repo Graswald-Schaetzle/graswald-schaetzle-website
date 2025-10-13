@@ -5,5 +5,4 @@ sections:
   - modules:
       - type: moduleTitle
         title: Privacy Policy
-      - type: moduleRichText
 ---

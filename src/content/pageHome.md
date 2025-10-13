@@ -15,7 +15,7 @@ moduleStickyContent:
     transformation in a way that is effective - strategically, humanly and
     efficiently.
   introLink:
-    link: /#contact
+    link: "#contact"
     linkText: Reach out now
   stickyColumn1:
     anchor: communication

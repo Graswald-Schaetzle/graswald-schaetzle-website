@@ -9,14 +9,14 @@ sections:
         content: >-
           **Graswald & Schätzle GmbH**  
 
-          Südliche Münchner Str. 42A  
+          Steiningergasse 2  
 
           82031 Grünwald  
 
-          Deutschland / Germany
+          94032 Passau
 
 
-          Telefon: +49 (0) 89 909015424  
+          Phone: +49 176 61799721  
 
           E-Mail:
           [office@graswald-schaetzle.com](mailto:office@graswald-schaetzle.com)

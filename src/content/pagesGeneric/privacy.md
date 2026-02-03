@@ -11,9 +11,7 @@ sections:
 
           Graswald & Schätzle GmbH  
 
-          Südliche Münchner Str. 42A  
-
-          82031 Grünwald  
+          Steiningergasse 2 / 94032 Passau  
 
           Deutschland / Germany  
 

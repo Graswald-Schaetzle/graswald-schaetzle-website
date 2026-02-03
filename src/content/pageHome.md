@@ -11,9 +11,9 @@ moduleStickyContent:
     age of AI for organizations ready to lead change, not just manage it.
 
 
-    We support companies, organizations and individuals in shaping
-    transformation in a way that is effective - strategically, humanly and
-    efficiently.
+    We support companies, organizations and individuals across Germany, Austria
+    and Switzerland in shaping transformation in a way that is effective -
+    strategically, humanly and efficiently.
   introLink:
     link: /#contact
     linkText: Reach out now

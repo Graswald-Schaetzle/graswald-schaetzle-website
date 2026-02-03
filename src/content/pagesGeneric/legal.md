@@ -34,6 +34,9 @@ sections:
           HRB 302983
 
 
+          (In Transition to Passau)
+
+
           **VAT Identification Number according to §27a German VAT Act:**  
 
           DE455352436

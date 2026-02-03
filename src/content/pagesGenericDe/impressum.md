@@ -11,8 +11,6 @@ sections:
 
           Steiningergasse 2  
 
-          82031 Grünwald  
-
           94032 Passau
 
 
@@ -31,7 +29,8 @@ sections:
 
           **Registereintrag:**  
 
-          Eingetragen im Handelsregister des Amtsgerichts München  
+          Eingetragen im Handelsregister des Amtsgerichts München (In Umwandlung
+          nach Passau)  
 
           HRB 302983
 

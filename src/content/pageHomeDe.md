@@ -12,9 +12,9 @@ moduleStickyContent:
     nicht nur zu managen.
 
 
-    Wir unterstützen Unternehmen, Organisationen und Einzelpersonen dabei,
-    Transformation effektiv zu gestalten – strategisch, menschlich und
-    effizient.
+    Wir unterstützen Unternehmen, Organisationen und Einzelpersonen in
+    Deutschland, Österreich und der Schweiz dabei, Transformation effektiv zu
+    gestalten – strategisch, menschlich und effizient.
   introLink:
     link: "#kontakt"
     linkText: Jetzt kontaktieren

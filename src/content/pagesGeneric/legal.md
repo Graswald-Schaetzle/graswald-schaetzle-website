@@ -11,8 +11,6 @@ sections:
 
           Steiningergasse 2  
 
-          82031 Grünwald  
-
           94032 Passau
 
 

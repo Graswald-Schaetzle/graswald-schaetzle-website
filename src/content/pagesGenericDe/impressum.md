@@ -29,10 +29,7 @@ sections:
 
           **Registereintrag:**  
 
-          Eingetragen im Handelsregister des Amtsgerichts München (In Umwandlung
-          nach Passau)  
-
-          HRB 302983
+          Eingetragen im Handelsregister des Amtsgerichts Passau HRB 13185
 
 
           **Umsatzsteuer-Identifikationsnummer gemäß §27 a

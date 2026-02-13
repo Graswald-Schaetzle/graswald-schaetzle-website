@@ -48,7 +48,7 @@ sections:
           **Hinweis gemäß § 5 TMG**  
 
           Die Graswald & Schätzle GmbH ist eine Gesellschaft mit beschränkter
-          Haftung deutschen Rechts mit Sitz in Grünwald, Deutschland.
+          Haftung deutschen Rechts mit Sitz in Passau Deutschland.
 
 
           **Haftung für Inhalte**  

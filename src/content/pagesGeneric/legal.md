@@ -29,12 +29,7 @@ sections:
 
           **Commercial Register:**  
 
-          Registered at Local Court of Munich  
-
-          HRB 302983
-
-
-          (In Transition to Passau)
+          Registered at Local Court of Passau HRB 13185
 
 
           **VAT Identification Number according to §27a German VAT Act:**  
@@ -52,7 +47,7 @@ sections:
           **Information according to § 5 TMG**  
 
           Graswald & Schätzle GmbH is a limited liability company under German
-          law, based in Grünwald, Germany.
+          law, based in Passau Germany.
 
 
           **Liability for Content**  

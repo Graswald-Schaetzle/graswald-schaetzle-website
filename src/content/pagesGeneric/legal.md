@@ -47,7 +47,7 @@ sections:
           **Information according to § 5 TMG**  
 
           Graswald & Schätzle GmbH is a limited liability company under German
-          law, based in Passau Germany.
+          law, based in Passau, Germany.
 
 
           **Liability for Content**  

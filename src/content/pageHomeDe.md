@@ -3,10 +3,10 @@ title: Home
 h1: Graswald/Schaetzle, die Boutique-Beratung für eine Welt im Wandel.
 moduleStickyContent:
   anchor: intro
-  intro: Graswald/Schätzle ist eine Boutique-Beratung für Organisationen, die den
-    Wandel nicht verwalten – sondern prägen wollen. Wir verbinden Kommunikation,
-    Technologie und Führung zu einer Kraft, die trägt. In Deutschland,
-    Österreich und der Schweiz.
+  intro: Graswald/Schätzle ist eine Boutique-Beratung für Menschen und
+    Organisationen, die den Wandel nicht verwalten – sondern prägen wollen. Wir
+    verbinden Kommunikation, Technologie und Führung zu einer Kraft, die trägt.
+    In Deutschland, Österreich und der Schweiz.
   introLink:
     link: "#kontakt"
     linkText: Jetzt kontaktieren

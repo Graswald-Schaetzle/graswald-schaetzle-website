@@ -3,18 +3,10 @@ title: Home
 h1: Graswald/Schaetzle, die Boutique-Beratung für eine Welt im Wandel.
 moduleStickyContent:
   anchor: intro
-  intro: >-
-    Graswald/Schaetzle ist eine Boutique-Beratung für eine Welt im Wandel.
-
-
-    Wir gestalten Kommunikation, Technologie und Führung zukunftsfähig für das
-    KI-Zeitalter – für Organisationen, die bereit sind, den Wandel zu gestalten,
-    nicht nur zu managen.
-
-
-    Wir unterstützen Unternehmen, Organisationen und Einzelpersonen in
-    Deutschland, Österreich und der Schweiz dabei, Transformation effektiv zu
-    gestalten – strategisch, menschlich und effizient.
+  intro: Graswald/Schätzle ist eine Boutique-Beratung für Organisationen, die den
+    Wandel nicht verwalten – sondern prägen wollen. Wir verbinden Kommunikation,
+    Technologie und Führung zu einer Kraft, die trägt. In Deutschland,
+    Österreich und der Schweiz.
   introLink:
     link: "#kontakt"
     linkText: Jetzt kontaktieren
@@ -25,22 +17,19 @@ moduleStickyContent:
       - type: componentStickyColumnContent
         title: Ansatz
         content: >-
-          Die Unterstützung von Führungskräften und Organisationen im
-          Transformationsprozess beginnt mit der richtigen Kommunikation – nicht
-          als Verpackung, sondern als Instrument für Klarheit, Ausrichtung und
-          Vertrauen.  
+          Kommunikation wirkt nur, wenn sie durchdacht ist – nach innen wie nach
+          außen.
 
-          Naïs Graswald arbeitet dort, wo Kommunikation strategisch wird: Sie
-          gestaltet Narrative, schärft Botschaften und entwickelt die interne
-          Sprache, die für den Wandel notwendig ist.  
 
-          Sie betrachtet Kommunikation nicht isoliert, sondern ordnet
-          Herausforderungen in den größeren Wandel ein: von der industriellen
-          Vergangenheit in eine digitale Zukunft, die noch immer geschrieben
-          wird. Die Zusammenarbeit mit Naïs bedeutet, den Prozess gemeinsam zu
-          gestalten, umzusetzen und am Ball zu bleiben. Denn Wirkung entsteht
-          durch die Arbeit inmitten komplexer Komplexität – gemeinsam, in
-          Sprache und Tat.
+          Naïs Graswald beherrscht beides: die externe Kommunikation, die
+          Vertrauen bei Kunden, Partnern und der Öffentlichkeit schafft – und
+          die interne, die Mitarbeitende ausrichtet, Führung stärkt und Wandel
+          greifbar macht.
+
+
+          Dabei bleibt sie nicht an der Oberfläche. Sie versteht die Systeme und
+          Strategien dahinter – und entwickelt Kommunikation, die nicht nur gut
+          klingt, sondern wirklich funktioniert.
       - type: componentStickyColumnImage
         title: Naïs Graswald
         image:
@@ -48,47 +37,47 @@ moduleStickyContent:
           alt: Naïs Graswald Portrait
       - type: componentStickyColumnContent
         title: Hintergrund
-        content: Wir verwandeln Mehrdeutigkeiten in Übereinstimmung. Narrative, die
-          Orientierung geben. Botschaften, die ankommen. Und eine gemeinsame
-          Sprache, die Menschen voranbringt. Klarheit statt Schlagworte.
-          Wahrheit statt Glanz. Wir sagen, was wichtig ist – klar, direkt und
-          ohne Ablenkung.
+        content: >-
+          Wo andere Komplexität verwalten, schaffen wir Klarheit.
+
+
+          Narrative, die Orientierung geben. Botschaften, die ankommen. Eine
+          gemeinsame Sprache, die Menschen und Organisationen voranbringt.
+
+
+          Kein Glanz. Keine Schlagworte. Nur das, was wirklich zählt – klar
+          gesagt, direkt vermittelt, konsequent umgesetzt.
       - type: componentStickyColumnList
         title: Kernleistungen
         text:
-          - "C-Level & Board Advisory: Positionierung & Reputation"
-          - "Executive & Enterprise Social Media: Stakeholder-orientiert &
-            inhaltlich fundiert"
-          - "Transformationskommunikation: Intern & Extern"
-          - "KI-fähige Kommunikation und Newsroom: Strukturen und Weiterbildung"
-          - "Kuratierung von Führungsveranstaltungen: Kuratierte Räume für
-            Klarheit, Verbindung und Wirkung"
+          - C-Level & Board Advisory
+          - Executive & Enterprise Social Media
+          - Transformations- & Krisenkommunikation
+          - Der KI-Newsroom
+          - Leadership Events & Facilitation
       - type: componentStickyColumnContent
         title: Impact
-        content: >-
-          In der Zusammenarbeit mit Naïs Graswald entsteht Klarheit in Führung,
-          Narrativ und Richtung.  
-
-          Klienten finden die richtigen Worte, um voranzukommen. Sie gewinnen
-          Orientierung und eine Sprache, die Vertrauen schafft.  
-
-          Fortschritt wird kommunizierbar, umsetzbar und menschlich. Denn
-          richtig eingesetzte Kommunikation erklärt nicht nur Transformation –
-          sie ermöglicht Zukunft.
+        content: Klarheit in Führung, Narrativ und Richtung. Klienten von Naïs Graswald
+          finden die Sprache, die intern verbindet und extern trägt – und die
+          Sicherheit, sie zu nutzen. Denn Kommunikation, die wirklich wirkt,
+          erklärt Transformation nicht nur. Sie macht sie möglich.
   stickyColumn2:
     anchor: technologie
     title: Technologie
     sections:
       - type: componentStickyColumnContent
         title: Ansatz
-        content: Bei Technologie geht es nie nur um Systeme – es geht darum, wie
-          Menschen mit ihnen interagieren. Florian Schätzle arbeitet an der
-          Spitze des Machbaren und liefert IT-Strategien und -Implementierungen,
-          die immer einen Schritt voraus sind. Er konzipiert und implementiert
-          KI-Strategien, die verständlich, nutzbar und auf die Unternehmensziele
-          abgestimmt sind. Er übersetzt Komplexität in Klarheit, entwickelt
-          Prototypen, die über Konzepte hinausgehen, und ermöglicht Teams,
-          nachhaltige Lösungen zu entwickeln.
+        content: >-
+          Technologie entfaltet ihren Wert erst durch die Menschen, die mit ihr
+          arbeiten. Florian Schätzle weiß das – und baut IT- und KI-Strategien,
+          die genau dort ansetzen.
+
+
+          Er konzipiert und implementiert Lösungen, die verständlich, nutzbar
+          und auf die Unternehmensziele abgestimmt sind. Er entwickelt
+          Prototypen und Tools, die über Konzepte hinausgehen. Und er übersetzt
+          Komplexität in Klarheit – damit Teams nicht nur verstehen, was möglich
+          ist, sondern es auch umsetzen können.
       - type: componentStickyColumnImage
         title: Florian Schätzle
         image:
@@ -96,12 +85,16 @@ moduleStickyContent:
           alt: Florian Schätzle Portrait
       - type: componentStickyColumnContent
         title: Hintergrund
-        content: Mit seinem Hintergrund in KI, digitaler Produktentwicklung und
-          Systemdenken hat Florian branchenübergreifend und
-          unternehmensübergreifend gearbeitet – von jungen Unternehmen bis hin
-          zu DAX-Unternehmen. Seine Arbeit verbindet technische Tiefe mit
-          strategischer Relevanz und zielt stets auf Lösungen ab, die nicht nur
-          innovativ, sondern auch wirklich wirkungsvoll sind.
+        content: >-
+          Florian Schätzle kennt beide Welten: die Geschwindigkeit junger
+          Unternehmen und die Komplexität von DAX-Konzernen. Sein Hintergrund in
+          KI, digitaler Produktentwicklung und Systemdenken erlaubt ihm, beides
+          zu überbrücken.
+
+
+          Technische Tiefe ohne strategische Relevanz bringt nichts. Strategie
+          ohne Umsetzung auch nicht. Er verbindet beides – und baut Lösungen,
+          die wirklich funktionieren.
       - type: componentStickyColumnList
         title: Kernleistungen
         text:
@@ -110,39 +103,36 @@ moduleStickyContent:
           - Technologiepositionierung und Stakeholder-Ausrichtung
           - Agile Führungsunterstützung für technologiegetriebene Transformation
       - type: componentStickyColumnContent
-        title: Impact
-        content: Die Zeiten überzogener IT-Beratung ohne wirkliche Wirkung sind vorbei.
-          Florian bringt Struktur ins Chaos und Schwung in Ideen. Er unterstützt
-          Unternehmen dabei, ihre Ambitionen in die Tat umzusetzen – mit
-          Technologie, die passt, sich anpasst und Bestand hat. Denn der wahre
-          Wert von Innovation liegt nicht in ihren Versprechen, sondern in ihren
-          nachhaltigen Leistungen – heute und morgen.
+        title: Wirkung
+        content: >-
+          Viele IT-Projekte scheitern nicht an der Technologie – sondern daran,
+          dass sie nie wirklich zur Organisation gepasst haben.
+
+
+          Florian Schätzle bringt Struktur ins Chaos und Realismus in
+          Ambitionen. Er entwickelt Technologie, die passt, sich anpasst und
+          Bestand hat. Nicht für den Launch. Für danach.
   stickySection:
     content:
-      title: Konvergenz
+      title: Warum Graswald/Schätzle
       content: >-
-        Wenn Sie eine Transformation anstreben, die nicht in Konzepten stecken
-        bleibt oder bei der Umsetzung scheitert, brauchen Sie mehr als einen
-        Berater. Sie brauchen Partner, die die Systeme, die Menschen und den
-        Druck verstehen.
+        Die meisten Transformationen scheitern nicht am Willen – sondern daran,
+        dass Technologie und Kommunikation nie wirklich zusammenkommen.
 
 
-        Bei Graswald/Schätzle kombinieren wir Kommunikation,
-        Technologiestrategie und Führungskompetenz, um Sie dabei zu
-        unterstützen, komplexe Veränderungen voranzutreiben – klar, glaubwürdig
-        und nachhaltig.
+        Graswald/Schätzle ist eine Gemeinschaftspraxis für genau diesen Moment:
+        Naïs Graswald für Sprache, Narrativ und Führungskommunikation. Florian
+        Schätzle für IT-Strategie, KI und digitale Umsetzung. Einzeln buchbar,
+        wenn die Aufgabe klar ist. Gemeinsam, wenn beides gebraucht wird.
 
 
-        Wir glauben, dass Transformation nur funktioniert, wenn sie Technologie
-        mit Narrativ, Richtung mit Dialog und Ambition mit Umsetzung verbindet.
-        Nicht von Hype getrieben, sondern von Klarheit, Relevanz und dem Willen
-        zum Handeln. Wir beraten nicht nur. Wir gestalten mit. Wir setzen um.
-        Wir bleiben, bis es funktioniert.
+        Wir kommen nicht mit Foliendecks. Wir arbeiten von innen, übernehmen
+        Verantwortung für das Ergebnis – und bleiben, bis es wirklich
+        funktioniert.
 
 
-        Denn die von KI geprägte Zukunft sollte nicht gefürchtet – sie sollte
-        gestaltet werden. Nachdenklich. Menschlich. Mit Ihnen, nicht um Sie
-        herum.
+        Die KI-geprägte Zukunft lässt sich gestalten. Nachdenklich. Menschlich.
+        Mit Ihnen.
     column:
       anchor: transformation
       title: Transformation
@@ -154,16 +144,33 @@ moduleStickyContent:
             alt: Team Portrait
         - type: componentStickyColumnContent
           title: Philosophie
-          content: "Wir glauben, dass echter Wandel nicht mit einem Fahrplan beginnt,
-            sondern mit Verantwortung. Verantwortung für Sprache, für Systeme,
-            für die Kultur, in der Entscheidungen getroffen werden. Wir arbeiten
-            an der Schnittstelle von Kommunikation, Technologie und Führung –
-            nicht als Disziplinen, die es zu managen gilt, sondern als Kräfte,
-            die es zu bündeln gilt. Wir trennen weder Struktur von Story noch
-            Menschen von Prozessen. Wir schaffen Klarheit, wo andere Ebenen
-            schaffen, und Bewegung, wo andere zögern. Denn wir sind überzeugt:
-            Die von KI geprägte Zukunft wird uns nur dann nützen, wenn wir sie
-            bewusst, mit Tiefgang, Mut und menschlicher Absicht gestalten."
+          content: >-
+            Echter Wandel beginnt nicht mit einem Fahrplan. Er beginnt mit
+            Verantwortung.
+
+
+            Verantwortung für Sprache. Für Systeme. Für die Kultur, in der
+            Entscheidungen getroffen werden.
+
+
+            Wir arbeiten an der Schnittstelle von Kommunikation, Technologie und
+            Führung – nicht als Disziplinen, die es zu managen gilt, sondern als
+            Kräfte, die es zu bündeln gilt. Wir trennen weder Struktur von Story
+            noch Menschen von Prozessen.
+
+
+            Wir schaffen Klarheit, wo andere Komplexität verwalten. Und
+            Bewegung, wo andere zögern.
+
+
+            In einer Welt, die sich beschleunigt, reicht es nicht, mitzuhalten.
+            Es geht darum, Entscheidungen zu treffen, die auch in zehn Jahren
+            noch tragen. Enkelfähig zu denken – in Technologie, in
+            Kommunikation, in Führung.
+
+
+            Die KI-geprägte Zukunft wird uns nur nützen, wenn wir sie bewusst
+            gestalten – mit Tiefgang, Mut und menschlicher Absicht.
         - type: componentStickyColumnList
           title: Werte
           text:
@@ -179,7 +186,8 @@ moduleStickyContent:
               Kommunikation und Führung mit.
             - Wir setzen um und beraten nicht nur vom Prototyp bis zum Prozess.
             - Wir arbeiten modular – allein oder gemeinsam, ohne Overhead.
-            - Wir sprechen Vorstandszimmer und Backend.
+            - Wir sprechen Vorstandszimmer und Backend. Und haben die
+              Enkelfähigkeit im Blick.
 moduleTextLinksBlock:
   - anchor: kontakt
     title: Kontakt

@@ -14,7 +14,7 @@ sections:
           94032 Passau
 
 
-          Phone: +49 176 61799721  
+          Phone: +49 175 7427099  
 
           E-Mail:
           [office@graswald-schaetzle.com](mailto:office@graswald-schaetzle.com)
